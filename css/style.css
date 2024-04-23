@@ -1,111 +1,75 @@
+/* Base Styling */
 body, html {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #ffffff; /* Change text color to white for better contrast on black background */
+    color: #ffffff;
+    background-color: #000000; /* Overall background color */
     margin: 0;
     padding: 0;
-    background-color: #000000; /* Black background */
 }
 
+/* Resume Container Styling */
 .resume-container {
     padding: 20px;
     margin: auto;
     max-width: 1024px;
-    background: #fff; /* Keep the resume container white for contrast */
+    background: #ffffff; /* White background for main content area */
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
+    overflow: hidden; /* Prevents any child elements from overflowing */
 }
 
+/* Sidebar Styling */
 .sidebar {
-    background: #000080; /* Navy blue background for sidebar */
+    background-color: #000080; /* Navy blue background for the sidebar */
+    color: #ffffff;
     padding: 20px;
 }
 
-.sidebar h2, .main-content h2 {
+.sidebar h2 {
     font-size: 22px;
     border-bottom: 2px solid #f0f0f0;
     padding-bottom: 5px;
     margin-bottom: 20px;
 }
 
+/* Main Content Styling */
 .main-content {
-    background-color: #b0b0b0; /* Bright grey background for the main content */
-}
-
-.main-content header h1, .main-content header h3, .main-content section {
-    padding: 20px; /* Padding inside sections for spacing */
     background-color: #b0b0b0; /* Bright grey background */
+    padding: 20px;
 }
 
-/* Other styles remain unchanged */
-
-/* Update the colors for links and text in the sidebar to contrast against the navy blue */
-.sidebar a, .sidebar h2 {
-    color: #ffffff;
-}
-
-/* Continue with other styles as previously defined */
-
-
-.main-content header h1 {
-    font-size: 50px;
-    margin-bottom: 0;
-    color: #2c3e50; /* Dark color for the header text */
-}
-
-.main-content header h3 {
-    font-size: 25px;
-    color: #666;
-    margin-bottom: 20px;
+.main-content header h1, .main-content header h3 {
+    color: #2c3e50;
 }
 
 .main-content section {
     margin-bottom: 20px;
 }
 
-.main-content .job .dates {
-    font-size: 16px;
-    font-style: italic;
-    color: #777;
+/* Responsive Layout */
+@media (min-width: 768px) {
+    .resume-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .sidebar {
+        flex: 1 0 250px;
+    }
+
+    .main-content {
+        flex: 3 1 750px;
+    }
 }
 
-.contact p, .about-me p, .interests li {
-    font-size: 16px;
-    line-height: 1.5;
+@media (max-width: 767px) {
+    .sidebar, .main-content {
+        width: 100%;
+        flex: 0 0 100%;
+    }
 }
 
-.contact p a, .sidebar a {
-    color: #ffffff; /* Ensuring links are visible against the navy sidebar */
-    text-decoration: none;
-}
-
-.contact p a:hover, .sidebar a:hover {
-    text-decoration: underline;
-}
-
-.contact i {
-    width: 20px; /* Ensuring consistent width for inline icons */
-    margin-right: 10px; /* Space between icon and text */
-    color: #3498db; /* Optional: color for icons */
-    text-align: center;
-}
-
-.contact p {
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-/* Make sure the links in the contact information are styled appropriately */
-.contact p a {
-    color: #333; /* or choose the color that fits your design */
-    text-decoration: none;
-}
-
-.contact p a:hover {
-    text-decoration: underline;
-}
-
+/* Contact Information Styling */
 .contact-item {
     display: flex;
     align-items: center;
@@ -113,71 +77,16 @@ body, html {
 }
 
 .contact-item i {
-    min-width: 24px; /* Ensure icon width is consistent */
-    margin-right: 10px; /* Space between icon and text */
-    font-size: 16px; /* Icon size */
-}
-
-.map {
-    margin-top: 10px; /* Space above the map for clarity */
-    width: 100%; /* Ensures the map stretches to the width of its container */
-    height: 250px; /* Fixed height for the map */
-}
-
-.map iframe {
-    width: 100%; /* Ensures the iframe fills its container */
-    height: 100%; /* Match height of the container */
-    border: none; /* Removes any default border */
-}
-
-.interests ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.interests li::before {
-    content: "• ";
-    color: #ecf0f1; /* Light color for bullet points */
-    font-weight: bold;
-}
-
-@media (max-width: 991px) {
-    .sidebar {
-        background: #000080; /* Navy blue background for smaller screens */
-    }
-}
-
-.experience .job + .job {
-    border-top: 1px solid #eee;
-    padding-top: 20px;
-    margin-top: 20px;
-}
-
-.experience h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
-}
-
-.experience .dates {
-    font-size: 14px;
-    font-style: italic;
-    color: #888;
-    margin-bottom: 10px;
-}
-
-.experience p {
+    min-width: 24px;
+    margin-right: 10px;
     font-size: 16px;
-    line-height: 1.6;
 }
 
+/* Icon Styling */
 .social-links a {
     margin-right: 10px;
-    font-size: 24px; /* Adjust size as necessary */
-    text-decoration: none;
-}
-
-.social-links a:hover {
-    opacity: 0.8;
+    font-size: 24px;
+    color: inherit; /* Inherits color from parent for easier color management */
 }
 
 .social-links a.facebook {
@@ -200,10 +109,21 @@ body, html {
     color: #0077b5;
 }
 
-.qr-code-img {
-    width: 200px; /* Adjust size as necessary */
-    margin-top: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+/* Media Queries for Text Sizing */
+@media (max-width: 767px) {
+    body, html {
+        font-size: 14px; /* Smaller text on smaller devices */
+    }
+
+    .sidebar h2, .main-content header h1, .main-content header h3 {
+        font-size: smaller; /* Smaller headings on smaller devices */
+    }
+}
+
+/* Google Maps Styling */
+.map iframe {
+    width: 100%;
+    height: 250px; /* Fixed height, adjust as necessary */
+    border: none;
+    margin-top: 10px;
 }
