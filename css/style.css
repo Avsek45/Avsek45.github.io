@@ -1,41 +1,50 @@
 body, html {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #333;
+    color: #ffffff; /* Change text color to white for better contrast on black background */
     margin: 0;
     padding: 0;
-    background-color: #C0C0C0; /* Silver background for the page */
+    background-color: #000000; /* Black background */
 }
 
 .resume-container {
     padding: 20px;
     margin: auto;
     max-width: 1024px;
-    background: #fff;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
-    border-radius: 8px; /* Rounded corners for the container */
-}
-
-.profile-img {
-    width: 200px; /* Or any size you prefer */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 50%; /* Circular profile picture */
-    display: block;
-    margin: 0 auto 20px; /* Center align in the sidebar with margin bottom */
-    border: 5px solid #3498db; /* Border color around profile image */
+    background: #fff; /* Keep the resume container white for contrast */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
 }
 
 .sidebar {
     background: #000080; /* Navy blue background for sidebar */
     padding: 20px;
-    color: #ffffff; /* White text for better contrast on navy background */
 }
 
 .sidebar h2, .main-content h2 {
     font-size: 22px;
-    border-bottom: 2px solid #f0f0f0; /* Light silver underline for headers */
+    border-bottom: 2px solid #f0f0f0;
     padding-bottom: 5px;
     margin-bottom: 20px;
 }
+
+.main-content {
+    background-color: #b0b0b0; /* Bright grey background for the main content */
+}
+
+.main-content header h1, .main-content header h3, .main-content section {
+    padding: 20px; /* Padding inside sections for spacing */
+    background-color: #b0b0b0; /* Bright grey background */
+}
+
+/* Other styles remain unchanged */
+
+/* Update the colors for links and text in the sidebar to contrast against the navy blue */
+.sidebar a, .sidebar h2 {
+    color: #ffffff;
+}
+
+/* Continue with other styles as previously defined */
+
 
 .main-content header h1 {
     font-size: 50px;
