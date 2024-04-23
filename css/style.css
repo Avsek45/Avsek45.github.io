@@ -1,75 +1,76 @@
-/* Base Styling */
+/* Base and Reset Styles */
 body, html {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #ffffff;
-    background-color: #000000; /* Overall background color */
+    color: #ffffff; /* White text color for better readability on black background */
+    background-color: #000000; /* Black background for overall page */
     margin: 0;
     padding: 0;
 }
 
-/* Resume Container Styling */
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* Container for the resume content */
 .resume-container {
     padding: 20px;
     margin: auto;
     max-width: 1024px;
-    background: #ffffff; /* White background for main content area */
+    background: #fff; /* White background for contrast */
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
-    overflow: hidden; /* Prevents any child elements from overflowing */
 }
 
-/* Sidebar Styling */
+/* Styling for the sidebar */
 .sidebar {
-    background-color: #000080; /* Navy blue background for the sidebar */
-    color: #ffffff;
+    background: #000080; /* Navy blue background */
+    padding: 20px;
+    color: #ffffff; /* White text for contrast */
+}
+
+/* Main content area styling */
+.main-content {
+    background-color: #b0b0b0; /* Bright grey background */
     padding: 20px;
 }
 
-.sidebar h2 {
+/* Headings within sidebar and main content */
+.sidebar h2, .main-content h2 {
     font-size: 22px;
     border-bottom: 2px solid #f0f0f0;
     padding-bottom: 5px;
     margin-bottom: 20px;
 }
 
-/* Main Content Styling */
-.main-content {
-    background-color: #b0b0b0; /* Bright grey background */
-    padding: 20px;
-}
-
+/* Header within the main content */
 .main-content header h1, .main-content header h3 {
-    color: #2c3e50;
+    font-size: 50px;
+    color: #2c3e50; /* Dark color for text */
+    margin-bottom: 20px;
 }
 
+.main-content header h3 {
+    font-size: 25px;
+    color: #666;
+}
+
+/* Section spacing within main content */
 .main-content section {
     margin-bottom: 20px;
 }
 
-/* Responsive Layout */
-@media (min-width: 768px) {
-    .resume-container {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .sidebar {
-        flex: 1 0 250px;
-    }
-
-    .main-content {
-        flex: 3 1 750px;
-    }
+/* Job descriptions and details */
+.main-content .job .dates, .experience p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #777;
 }
 
-@media (max-width: 767px) {
-    .sidebar, .main-content {
-        width: 100%;
-        flex: 0 0 100%;
-    }
+.experience .dates {
+    font-style: italic;
 }
 
-/* Contact Information Styling */
+/* Contact information styling */
 .contact-item {
     display: flex;
     align-items: center;
@@ -77,53 +78,72 @@ body, html {
 }
 
 .contact-item i {
-    min-width: 24px;
-    margin-right: 10px;
-    font-size: 16px;
+    min-width: 24px; /* Fixed width for icons */
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 16px; /* Icon size */
+    color: #3498db; /* Icon color */
 }
 
-/* Icon Styling */
+/* Contact information links */
+.contact p a, .sidebar a {
+    color: #ffffff; /* White text for readability */
+    text-decoration: none;
+}
+
+.contact p a:hover, .sidebar a:hover {
+    text-decoration: underline;
+}
+
+/* Map styling */
+.map {
+    margin-top: 10px;
+    width: 100%;
+    height: 250px;
+}
+
+.map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* List styling for interests */
+.interests ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.interests li::before {
+    content: "• ";
+    color: #ecf0f1;
+    font-weight: bold;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 991px) {
+    .sidebar, .main-content {
+        width: 100%;
+    }
+}
+
+/* Social links styling */
 .social-links a {
     margin-right: 10px;
     font-size: 24px;
-    color: inherit; /* Inherits color from parent for easier color management */
 }
 
-.social-links a.facebook {
-    color: #3b5998;
-}
+/* Brand colors for social media icons */
+.social-links a.facebook { color: #3b5998; }
+.social-links a.instagram { color: #e4405f; }
+.social-links a.twitter { color: #1da1f2; }
+.social-links a.github { color: #333; }
+.social-links a.linkedin { color: #0077b5; }
 
-.social-links a.instagram {
-    color: #e4405f;
-}
-
-.social-links a.twitter {
-    color: #1da1f2;
-}
-
-.social-links a.github {
-    color: #333;
-}
-
-.social-links a.linkedin {
-    color: #0077b5;
-}
-
-/* Media Queries for Text Sizing */
-@media (max-width: 767px) {
-    body, html {
-        font-size: 14px; /* Smaller text on smaller devices */
-    }
-
-    .sidebar h2, .main-content header h1, .main-content header h3 {
-        font-size: smaller; /* Smaller headings on smaller devices */
-    }
-}
-
-/* Google Maps Styling */
-.map iframe {
-    width: 100%;
-    height: 250px; /* Fixed height, adjust as necessary */
-    border: none;
-    margin-top: 10px;
+/* QR code image styling */
+.qr-code-img {
+    width: 200px;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
