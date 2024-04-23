@@ -19,161 +19,137 @@ body, html {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     position: relative; /* Needed for absolute positioning of watermark */
 }
-/* About Me Section */
-#about-me {
-    text-align: left; /* Align to left */
-    background-color: #f0f8ff; /* Blizzard Pearl color */
-    padding: 20px;
-    margin-bottom: 20px;
-}
-#about-me h2 {
-    margin-bottom: 10px;
-}
-#about-me p {
-    font-size: 24px;
-    margin-bottom: 10px;
-    text-align: center;
-}
 /* Profile Image */
 .profile-img {
-    width: 100px; /* Thumbnail size */
+    display: block;
+    margin: 0 auto; /* Center the image */
+    width: 100px; /* Size of the image */
     height: 100px; /* Keep it a square */
     border-radius: 50%; /* Round it */
-    display: block;
-    margin: 20px auto; /* Center the image above the about me section */
+    border: 3px solid #fff; /* Optional: adds white border around the image */
+    padding-top: 20px;
 }
 
 /* Sidebar adjustments */
 .sidebar {
     position: relative; /* For absolute positioning of social links and QR code */
-    padding-bottom: 120px; /* Additional space for absolute positioned elements */
 }
 
-/* Social Links and QR Code - you may need to adjust the bottom value as per your layout */
-.social-links, .qr-code {
-    position: absolute;
-    bottom: 10px; /* Place it at the bottom of the sidebar */
-    left: 0;
-    width: 100%;
-    text-align: center; /* Center align the content */
+/* QR Code - Positioned above the social links */
+.qr-code {
+    text-align: center; /* Center the QR code */
+    margin: 20px auto 10px;
 }
 
 .qr-code-img {
     width: 80px; /* Adjust to your preference */
     height: auto;
-    margin: 10px auto; /* Center it */
 }
 
-/* Skills Icons */
+/* Social Links - Positioned below the QR code */
+.social-links {
+    text-align: center; /* Center align the content */
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+/* Skill Icons - Align the skill icons with the text */
+.skill {
+    display: flex;
+    align-items: center; /* Aligns the icon and text vertically */
+    margin-bottom: 10px;
+}
+
 .skill i {
-    font-size: 1em; /* Make font size equal to the text */
-    vertical-align: middle; /* Align icons with the text */
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 1.5em; /* Adjust to your preference */
 }
 
-/* Skills Text */
-.skill span {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-/* Contact Information */
+/* Contact Details - Place the icon and text on the same line */
 .contact-item {
     display: flex;
-    align-items: center; /* Center align vertically */
-    margin-bottom: 10px;
+    align-items: center; /* Aligns the icon and text vertically */
+    margin-bottom: 10px; /* Space between contact items */
 }
 
 .contact-item i {
     margin-right: 10px; /* Space between icon and text */
+    font-size: 1.2em; /* Adjust to your preference */
 }
 
-/* Skills Highlight Section */
-#skills-highlight {
-    margin-top: 30px;
-}
-#skills-highlight h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.skill {
-    margin: 10px;
-    text-align: center;
-    flex: 1 1 calc(33.33% - 20px); /* Each skill occupies 1/3 of the container width with margin */
-    max-width: calc(33.33% - 20px); /* Maximum width of each skill */
-}
-.skill i {
-    font-size: 40px; /* Adjust icon size as needed */
-    color: #007bff; /* FontAwesome default brand color */
-    margin-bottom: 10px;
-}
-.skill span {
-    font-size: 18px;
-}
-/* Media Query for Responsive Adjustments */
-@media only screen and (max-width: 768px) {
-    .skill {
-        flex: 1 1 calc(50% - 20px); /* Each skill occupies 1/2 of the container width with margin */
-        max-width: calc(50% - 20px); /* Maximum width of each skill */
+/* Responsive adjustments */
+@media (max-width: 992px) { /* Adjust for tablets */
+    .profile-img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .qr-code-img {
+        width: 60px;
+    }
+    
+    /* Adjust sidebar padding to fit QR and social links */
+    .sidebar {
+        padding-bottom: 120px;
+    }
+    
+    /* Adjust skill icon size for tablets */
+    .skill i {
+        font-size: 1.3em;
     }
 }
-@media only screen and (max-width: 480px) {
+
+@media (max-width: 768px) { /* Adjust for smaller tablets and large phones */
+    .sidebar {
+        padding-bottom: 100px;
+    }
+    
     .skill {
-        flex: 1 1 calc(100% - 20px); /* Each skill occupies full container width with margin */
-        max-width: calc(100% - 20px); /* Maximum width of each skill */
+        justify-content: flex-start; /* Align skills to the start (left) */
+    }
+    
+    .skill i {
+        font-size: 1.2em;
+    }
+    
+    .social-links, .qr-code {
+        position: static; /* Stack QR and social links */
+        padding-bottom: 0;
     }
 }
-/* DevOps Watermark for Experience Section */
-.experience::before {
-    content: url('path/to/devops-logo.png'); /* Path to DevOps logo */
-    position: absolute;
-    top: 50%; 
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0.1; /* Subtle watermark opacity */
-    z-index: -1;
+
+@media (max-width: 576px) { /* Adjust for small phones */
+    .profile-img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .qr-code-img {
+        width: 50px;
+    }
+    
+    .sidebar {
+        padding-bottom: 80px;
+    }
+    
+    /* On small screens, stack the skill icons and text vertically for better readability */
+    .skill {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .skill i {
+        margin: 0 0 5px 0; /* Only margin-bottom */
+        font-size: 2em; /* Increase size for better tap targets */
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
-/* Sidebar and Main Content Styles */
-.sidebar, .main-content {
-    padding: 20px;
-}
-.sidebar {
-    background-color: #000080; /* Navy blue background */
-}
-/* Contact Items Left Align */
-.contact-item {
-    display: flex;
-    align-items: flex-start; /* Align items to the start of the flex container */
-    flex-direction: column; /* Stack them vertically */
-    color: #000000; /* Black text for contact items */
-}
-.contact-item i {
-    color: #3498db; /* Icons color */
-}
-/* Social Icons with Brand Colors */
-.social-links a {
-    font-size: 24px;
-    margin-right: 15px;
-    color: inherit; /* Icons inherit text color */
-}
-.social-links a.facebook { color: #3b5998; }
-.social-links a.instagram { color: #e4405f; }
-.social-links a.twitter { color: #1da1f2; }
-.social-links a.github { color: #333; }
-.social-links a.linkedin { color: #0077b5; }
-/* QR Code Styling */
-.qr-code-img {
-    width: 100%; /* QR Code takes full width of its column */
-    max-width: 250px; /* Maximum width set to prevent it from being too large */
-    height: auto; /* Maintain aspect ratio */
-    display: block;
-    margin: 10px auto; /* Center in the column */
-}
-/* Experience Section Styling */
+
 .experience {
     background-color: #ffffff; /* Change background to white */
     text-align: left; /* Align to left */
