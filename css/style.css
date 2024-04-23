@@ -34,6 +34,59 @@ body, html {
     margin-bottom: 10px;
     text-align: center;
 }
+/* Profile Image */
+.profile-img {
+    width: 100px; /* Thumbnail size */
+    height: 100px; /* Keep it a square */
+    border-radius: 50%; /* Round it */
+    display: block;
+    margin: 20px auto; /* Center the image above the about me section */
+}
+
+/* Sidebar adjustments */
+.sidebar {
+    position: relative; /* For absolute positioning of social links and QR code */
+    padding-bottom: 120px; /* Additional space for absolute positioned elements */
+}
+
+/* Social Links and QR Code - you may need to adjust the bottom value as per your layout */
+.social-links, .qr-code {
+    position: absolute;
+    bottom: 10px; /* Place it at the bottom of the sidebar */
+    left: 0;
+    width: 100%;
+    text-align: center; /* Center align the content */
+}
+
+.qr-code-img {
+    width: 80px; /* Adjust to your preference */
+    height: auto;
+    margin: 10px auto; /* Center it */
+}
+
+/* Skills Icons */
+.skill i {
+    font-size: 1em; /* Make font size equal to the text */
+    vertical-align: middle; /* Align icons with the text */
+}
+
+/* Skills Text */
+.skill span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Contact Information */
+.contact-item {
+    display: flex;
+    align-items: center; /* Center align vertically */
+    margin-bottom: 10px;
+}
+
+.contact-item i {
+    margin-right: 10px; /* Space between icon and text */
+}
+
 /* Skills Highlight Section */
 #skills-highlight {
     margin-top: 30px;
