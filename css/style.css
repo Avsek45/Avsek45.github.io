@@ -30,62 +30,88 @@ body, html {
     padding-top: 20px;
 }
 
-/* Sidebar adjustments */
 .sidebar {
-    position: relative;
-    background-color: #1DA1F2; /* For absolute positioning of social links and QR code */
+    position: relative; /* Enables absolute positioning relative to sidebar */
+    background-color: #1DA1F2; /* Blue background for the sidebar */
+    padding-bottom: 120px; /* Space for social links and QR code at the bottom */
+    /* Other styles you may have for sidebar */
 }
 
-/* QR Code - Positioned above the social links */
-/* Social Links with Logos */
+/* Social links and QR code styles */
 .social-links {
-    /* Position your logos correctly here. If they are inline elements or inline-block, you might just need text-align */
-    text-align: center; /* Aligns the content to the center */
-    padding-bottom: 20px; /* Add padding if needed */
+    position: absolute;
+    bottom: 50px; /* Distance from bottom of sidebar */
+    left: 0;
+    width: 100%; /* Ensures the content spans the full width of the sidebar */
+    text-align: left; /* Align the content to the left */
 }
 
-.social-links span {
-    /* Replace with img and adjust as needed for logos */
-    display: inline-block; /* or inline if you're using img tags */
-    margin-right: 10px;
-    /* Additional styling for logos can go here */
-}
-
-/* QR Code styling */
 .qr-code {
-    text-align: center; /* Center the QR code and text */
-    margin: 0 auto; /* Center the block */
+    position: absolute;
+    bottom: 10px; /* Adjust this value to place the elements correctly at the bottom */
+    left: 0;
+    width: 100%; /* Ensures the content spans the full width of the sidebar */
+    text-align: left; /* Align the content to the left */
 }
 
 .qr-code img {
-    width: 80px; /* Adjust to your preference */
-    height: auto;
+    width: 80px; /* Set the width of your QR code image */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .qr-code p {
-    color: #fff; /* Set the color for the 'SCAN ME' text if needed */
-    margin-top: 10px; /* Spacing between the QR code and text */
+    display: inline-block;
+    margin-left: 10px; /* Spacing after the QR code */
+    font-size: 0.8em; /* Smaller font size */
+    vertical-align: middle; /* Align text with QR code image */
+    color: #fff; /* White color text */
 }
-
-/* Ensure social links and QR are at the bottom of the sidebar */
-.sidebar {
-    padding-bottom: 150px; /* Adjust this value to make sure there's enough space at the bottom */
-}
-
-/* ... rest of the CSS ... */
 
 /* Responsive adjustments */
-@media (max-width: 992px) { /* Adjust for tablets */
-    /* ... */
+@media (max-width: 992px) {
+    .sidebar {
+        padding-bottom: 100px; /* Adjust sidebar padding for tablet sizes */
+    }
+    .qr-code img {
+        width: 60px; /* Adjust QR code size for tablet sizes */
+    }
+    .qr-code p {
+        font-size: 0.7em; /* Smaller 'SCAN ME' text for tablets */
+    }
 }
 
-@media (max-width: 768px) { /* Adjust for smaller tablets and large phones */
-    /* ... */
+@media (max-width: 768px) {
+    .sidebar {
+        padding-bottom: 80px; /* Adjustments for smaller tablets and large phones */
+    }
+    .social-links,
+    .qr-code {
+        position: static; /* Remove absolute positioning for stacking */
+        text-align: center; /* Center-align for better presentation on smaller screens */
+    }
+    .qr-code img {
+        width: 50px; /* Smaller QR code for smaller screens */
+    }
+    .qr-code p {
+        margin-left: 5px; /* Smaller spacing after the QR code */
+    }
 }
 
-@media (max-width: 576px) { /* Adjust for small phones */
-    /* ... */
+@media (max-width: 576px) {
+    .sidebar {
+        padding-bottom: 60px; /* Adjustments for small phones */
+    }
+    .social-links a,
+    .social-links img {
+        margin: 5px; /* Larger clickable area for small touchscreens */
+    }
+    .qr-code p {
+        display: block; /* Make 'SCAN ME' text appear below the QR code */
+        margin-left: 0;
+        margin-top: 5px; /* Spacing above the 'SCAN ME' text */
+    }
 }
+
 
 .skill {
     display: flex;
