@@ -97,6 +97,25 @@ body, html {
     text-decoration: underline;
 }
 
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-item i {
+    min-width: 24px; /* Ensure icon width is consistent */
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 16px; /* Icon size */
+}
+
+.map iframe {
+    width: 100%; /* Responsive width */
+    height: 250px; /* Fixed height */
+    border: none;
+    margin-top: 10px; /* Space between address text and map */
+}
+
 
 .interests ul {
     list-style: none;
@@ -169,7 +188,7 @@ body, html {
 }
 
 .qr-code-img {
-    width: 100px; /* Adjust size as necessary */
+    width: 200px; /* Adjust size as necessary */
     margin-top: 20px;
     display: block;
     margin-left: auto;
