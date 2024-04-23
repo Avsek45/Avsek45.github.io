@@ -32,38 +32,103 @@ body, html {
 
 /* Sidebar adjustments */
 .sidebar {
-    position: relative; /* For absolute positioning of social links and QR code */
+    position: relative;
+    background-color: #1DA1F2; /* For absolute positioning of social links and QR code */
 }
 
 /* QR Code - Positioned above the social links */
-.qr-code {
-    text-align: center; /* Center the QR code */
-    margin: 20px auto 10px;
+/* Social Links with Logos */
+.social-links {
+    /* Position your logos correctly here. If they are inline elements or inline-block, you might just need text-align */
+    text-align: center; /* Aligns the content to the center */
+    padding-bottom: 20px; /* Add padding if needed */
 }
 
-.qr-code-img {
+.social-links span {
+    /* Replace with img and adjust as needed for logos */
+    display: inline-block; /* or inline if you're using img tags */
+    margin-right: 10px;
+    /* Additional styling for logos can go here */
+}
+
+/* QR Code styling */
+.qr-code {
+    text-align: center; /* Center the QR code and text */
+    margin: 0 auto; /* Center the block */
+}
+
+.qr-code img {
     width: 80px; /* Adjust to your preference */
     height: auto;
 }
 
-/* Social Links - Positioned below the QR code */
-.social-links {
-    text-align: center; /* Center align the content */
-    padding-top: 10px;
-    padding-bottom: 20px;
+.qr-code p {
+    color: #fff; /* Set the color for the 'SCAN ME' text if needed */
+    margin-top: 10px; /* Spacing between the QR code and text */
 }
 
-/* Skill Icons - Align the skill icons with the text */
+/* Ensure social links and QR are at the bottom of the sidebar */
+.sidebar {
+    padding-bottom: 150px; /* Adjust this value to make sure there's enough space at the bottom */
+}
+
+/* ... rest of the CSS ... */
+
+/* Responsive adjustments */
+@media (max-width: 992px) { /* Adjust for tablets */
+    /* ... */
+}
+
+@media (max-width: 768px) { /* Adjust for smaller tablets and large phones */
+    /* ... */
+}
+
+@media (max-width: 576px) { /* Adjust for small phones */
+    /* ... */
+}
+
 .skill {
     display: flex;
-    align-items: center; /* Aligns the icon and text vertically */
+    align-items: center;
     margin-bottom: 10px;
 }
 
-.skill i {
-    margin-right: 10px; /* Space between icon and text */
-    font-size: 1.5em; /* Adjust to your preference */
+.skill img {
+    height: 1em; /* This sets the logo height to match the font size of the skill name */
+    margin-right: 10px;
+    vertical-align: middle; /* Aligns the logo with the middle of the text */
 }
+
+.skill span {
+    /* Adjust the line height if necessary to align better with the logos */
+    line-height: 1.2em;
+}
+
+
+@media (max-width: 768px) {
+    .skill img {
+        height: 1em; /* Keep the size consistent with the text */
+    }
+
+    .skill span {
+        font-size: smaller; /* Optionally, adjust the font size on smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .skill {
+        /* If the screen is really small, you might want to stack them vertically */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .skill img {
+        margin: 0 0 5px 0; /* Adjust margins for a vertical layout */
+        height: 1.5em; /* You can make the logo slightly larger if needed */
+    }
+}
+
 
 /* Contact Details - Place the icon and text on the same line */
 .contact-item {
