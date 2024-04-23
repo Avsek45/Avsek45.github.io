@@ -109,3 +109,21 @@ body, html {
     font-size: 16px;
     line-height: 1.6;
 }
+
+.social-links a {
+    color: #ecf0f1;
+    margin-right: 10px;
+    font-size: 24px; /* Adjust size as necessary */
+}
+
+.social-links a:hover {
+    color: #3498db;
+}
+
+.qr-code-img {
+    width: 100px; /* Adjust size as necessary */
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
