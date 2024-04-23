@@ -119,17 +119,16 @@ body, html {
 }
 
 .map {
-    max-width: 100%; /* Ensures the map fits within the column */
+    margin-top: 10px; /* Space above the map for clarity */
+    width: 100%; /* Ensures the map stretches to the width of its container */
+    height: 250px; /* Fixed height for the map */
 }
 
 .map iframe {
-    width: 100%;
-    height: 250px;
-    border: none;
-    margin-top: 10px;
+    width: 100%; /* Ensures the iframe fills its container */
+    height: 100%; /* Match height of the container */
+    border: none; /* Removes any default border */
 }
-
-
 
 .interests ul {
     list-style: none;
