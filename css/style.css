@@ -280,7 +280,8 @@ body, html {
 }
 
 .experience {
-    background-color: #ffffff; /* Change background to white */
+    background-color: #ffffff;
+    color: #ffffff; /* Change background to white */
     text-align: left; /* Align to left */
     padding: 20px;
     margin-bottom: 20px;
@@ -305,12 +306,18 @@ body, html {
     /* Tablet adjustments */
     .resume-container {
         padding: 10px;
+    .experience {
+            background-color: #000000; /* Reaffirm background color for smaller tablets */
+        }
     }
 }
 @media only screen and (max-width: 480px) {
     /* Mobile adjustments */
     .resume-container {
         padding: 10px;
+    .experience {
+            background-color: #000000; /* Reaffirm background color for mobile phones */
+        }
     }
 }
 /* Link styling */
