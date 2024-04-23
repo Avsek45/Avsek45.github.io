@@ -3,6 +3,7 @@ body, html {
     color: #333;
     margin: 0;
     padding: 0;
+    background-color: #C0C0C0; /* Silver background for the page */
 }
 
 .resume-container {
@@ -10,23 +11,28 @@ body, html {
     margin: auto;
     max-width: 1024px;
     background: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+    border-radius: 8px; /* Rounded corners for the container */
 }
+
 .profile-img {
     width: 200px; /* Or any size you prefer */
     height: auto; /* Maintain aspect ratio */
     border-radius: 50%; /* Circular profile picture */
     display: block;
     margin: 0 auto 20px; /* Center align in the sidebar with margin bottom */
+    border: 5px solid #3498db; /* Border color around profile image */
 }
 
 .sidebar {
-    background: #f8f9fa;
+    background: #000080; /* Navy blue background for sidebar */
     padding: 20px;
+    color: #ffffff; /* White text for better contrast on navy background */
 }
 
 .sidebar h2, .main-content h2 {
     font-size: 22px;
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid #f0f0f0; /* Light silver underline for headers */
     padding-bottom: 5px;
     margin-bottom: 20px;
 }
@@ -34,6 +40,7 @@ body, html {
 .main-content header h1 {
     font-size: 50px;
     margin-bottom: 0;
+    color: #2c3e50; /* Dark color for the header text */
 }
 
 .main-content header h3 {
@@ -57,12 +64,12 @@ body, html {
     line-height: 1.5;
 }
 
-.contact p a {
-    color: #333;
+.contact p a, .sidebar a {
+    color: #ffffff; /* Ensuring links are visible against the navy sidebar */
     text-decoration: none;
 }
 
-.contact p a:hover {
+.contact p a:hover, .sidebar a:hover {
     text-decoration: underline;
 }
 
@@ -73,20 +80,16 @@ body, html {
 
 .interests li::before {
     content: "• ";
-    color: #333;
+    color: #ecf0f1; /* Light color for bullet points */
     font-weight: bold;
 }
 
 @media (max-width: 991px) {
-    .resume-container {
-        padding: 20px;
-    }
-
     .sidebar {
-        background: none;
-        padding: 0;
+        background: #000080; /* Navy blue background for smaller screens */
     }
 }
+
 .experience .job + .job {
     border-top: 1px solid #eee;
     padding-top: 20px;
@@ -111,13 +114,33 @@ body, html {
 }
 
 .social-links a {
-    color: #ecf0f1;
     margin-right: 10px;
     font-size: 24px; /* Adjust size as necessary */
+    text-decoration: none;
 }
 
 .social-links a:hover {
-    color: #3498db;
+    opacity: 0.8;
+}
+
+.social-links a.facebook {
+    color: #3b5998;
+}
+
+.social-links a.instagram {
+    color: #e4405f;
+}
+
+.social-links a.twitter {
+    color: #1da1f2;
+}
+
+.social-links a.github {
+    color: #333;
+}
+
+.social-links a.linkedin {
+    color: #0077b5;
 }
 
 .qr-code-img {
