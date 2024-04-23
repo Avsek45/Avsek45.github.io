@@ -1,4 +1,82 @@
-/* Add custom styles here */
-body {
-    padding-top: 80px;
+body, html {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.resume-container {
+    padding: 20px;
+    margin: auto;
+    max-width: 1024px;
+    background: #fff;
+}
+
+.sidebar {
+    background: #f8f9fa;
+    padding: 20px;
+}
+
+.sidebar h2, .main-content h2 {
+    font-size: 22px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.main-content header h1 {
+    font-size: 50px;
+    margin-bottom: 0;
+}
+
+.main-content header h3 {
+    font-size: 25px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.main-content section {
+    margin-bottom: 20px;
+}
+
+.main-content .job .dates {
+    font-size: 16px;
+    font-style: italic;
+    color: #777;
+}
+
+.contact p, .about-me p, .interests li {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.contact p a {
+    color: #333;
+    text-decoration: none;
+}
+
+.contact p a:hover {
+    text-decoration: underline;
+}
+
+.interests ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.interests li::before {
+    content: "• ";
+    color: #333;
+    font-weight: bold;
+}
+
+@media (max-width: 991px) {
+    .resume-container {
+        padding: 20px;
+    }
+
+    .sidebar {
+        background: none;
+        padding: 0;
+    }
 }
