@@ -5,22 +5,63 @@
     box-sizing: border-box;
 }
 
-body, html {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: #000000; /* Ensure the base background is black */
-    color: #ffffff; /* Text color set to white for readability */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap');
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
+.fadeInElement {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0; /* Start elements as invisible */
+}
+
+
+body, html {
+    font-family: 'Roboto', sans-serif; /* Roboto is clean and professional */
+    background-color: hsl(63, 41%, 83%); /* Soft gray for the background */
+    color: #333; /* Dark gray for primary text, ensuring good readability */
+    line-height: 1.6; /* Improved line spacing */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', serif; /* Secondary font for headings */
+    color: #204056; /* Stylish dark blue for headings */
+}
+
+/* General hover effect for sections */
+.section {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.section:hover {
+    transform: translateY(-3px); /* Slightly raise the section */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Increase shadow for 3D effect */
+}
+
+/* Animation for icons */
+@keyframes rotate-icon {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.social-icon:hover {
+    animation: rotate-icon 2s linear 1; /* Rotate icons on hover */
+}
+
+/* Resume container to center the content */
 .resume-container {
-    width: 100%;
     max-width: 1024px;
-    margin: 20px auto; /* Ensure center alignment and consistent margin */
-    padding: 20px; /* Padding inside the container */
+    margin: 20px auto;
+    padding: 20px;
     background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    position: relative;
-    overflow: hidden; /* Helps contain floated elements or overflowing content */
 }
 
 
@@ -28,28 +69,38 @@ body, html {
 .profile-img {
     display: block;
     margin: 0 auto; /* Center the image */
-    width: 200px; /* Adjust as needed, and make responsive below */
-    height: 200px;
-    border-radius: 50%; /* Circle shape */
-    object-fit: cover;
-    border: 5px solid #ffffff; /* White border */
+    width: 200px; /* Width of the image, adjust as needed */
+    height: 200px; /* Height of the image, adjust as needed */
+    border-radius: 50%; /* Create a circular shape */
+    object-fit: cover; /* Ensures the image covers the circle */
+    border: 5px solid #1DA1F2; /* Optional: white border, you can change color and size */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Initial subtle shadow */
 }
 
-/* About Me Section */
-/* About Me Section Styling */
-#about-me {
-    background-color: #f5f5f5; /* Light grey background for a softer look */
-    color: #333333; /* Dark grey text for contrast */
+.profile-img:hover {
+    transform: scale(1.05); /* Slightly increase the size of the image */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increased shadow for a lifted effect */
+}
+
+/* About Me and Contact Section Styling */
+#about-me, .contact {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Subtle gradient for depth */
+    color: #204056; /* Dark cyan text to match headings */
     padding: 20px;
-    border-radius: 10px; /* Rounded corners */
-    margin-bottom: 30px; /* Space below the section */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    text-align: center; /* Centered text */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+#about-me:hover, .contact:hover {
+    transform: translateY(-5px); /* Subtle lift effect on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Contact Section Styling */
 .contact {
-    background-color: #f5f5f5; /* Matching light grey background */
+    background-color: rgba(245, 245, 245, 0.592); /* Matching light grey background */
     color: #333333; /* Matching dark grey text */
     padding: 20px;
     border-radius: 10px; /* Rounded corners */
@@ -87,28 +138,63 @@ body, html {
     text-decoration: none; /* Removes underline from links */
 }
 
-/* Skills Highlight Section */
-/* Skills Highlight Section Styling */
-#skills-highlight {
-    background-color: #e8f0fe; /* Soft blue background */
-    color: #333333; /* Dark grey text for contrast */
+/* Spacing and visual improvements for sections */
+.section {
     padding: 20px;
-    border-radius: 10px; /* Rounded corners for a smoother appearance */
-    margin-bottom: 20px; /* Space between sections */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    border-left: 4px solid #007bff; /* Accent color border for a touch of style */
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Individual skill item styling */
-.skill {
-    background-color: #ffffff; /* White background for each skill item */
-    color: #333333; /* Dark grey text ensures readability */
+/* Detailed list styling */
+.skill-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns for skills */
+    gap: 10px;
+    list-style: none; /* No bullets */
+}
+
+.skill-list li {
+    background-color: #e8f0fe;
     padding: 10px;
-    margin: 10px 0; /* Spacing between skill items */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Light shadow for depth */
-    display: flex;
-    align-items: center; /* Aligns icon and text centrally */
+    border-radius: 5px;
+}
+.skill-icon {
+    color: #007bff; /* Icon color */
+    margin-right: 5px; /* Space between icon and text */
+}
+
+/* Skills Highlight Section Styling */
+#skills-highlight {
+    background: linear-gradient(to right, #6a82fb, #fc5c7d); /* Vibrant gradient background */
+    border-left: 5px solid #29b6f6;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+#skills-highlight:hover {
+    transform: scale(1.03); /* Slight scale up on hover */
+}
+
+/* Skill Item Enhancement */
+.skill {
+    background-color: #ffffff; /* Crisp white background */
+    color: #204056; /* Text color matches the headings */
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
+}
+
+.skill:hover, .experience:hover, #skills-highlight:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
 }
 
 /* Skill Icon/Image */
@@ -132,7 +218,7 @@ s
 }
 
 /* QR code and 'SCAN ME' text styling */
-./* QR Code container styling */
+/* QR Code container styling */
 .qr-code {
     text-align: center; /* Center align QR code within the container */
     padding: 20px; /* Padding around the QR code */
@@ -188,6 +274,23 @@ s
     transition: transform 0.2s ease-in-out; /* Smooth transition for scale effect */
 }
 
+/* Social Links Styling */
+.social-links a {
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-links a:hover {
+    transform: scale(1.2); /* Enlarge icons on hover for a dynamic effect */
+}
+
+/* QR Code Enhancement */
+.qr-code {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 
 /* Google Maps iframe */
 .google-maps iframe {
@@ -206,12 +309,11 @@ s
 }
 
 .experience {
-    background-color: #e8f0fe; /* Soft blue for a calm, inviting look */
-    color: #333333; /* Dark gray text for readability */
+    margin-top: 30px;
+    background-color: #e6f0fa; /* Light blue background for a subtle, professional look */
     padding: 20px;
-    border-radius: 10px; /* Rounded corners for a smoother appearance */
-    margin-bottom: 20px; /* Space between sections */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding depth with a shadow */
+    border-left: 5px solid #0077cc; /* Navy blue for a strong left border accent */
+    border-radius: 5px;
 }
 
 
@@ -222,10 +324,9 @@ s
 
 /* Experience job entries */
 .experience .job {
-    border-bottom: 1px solid #222; /* Subtle border for each job entry */
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    transition: background-color 0.3s ease; /* Transition for hover effect */
+    border-bottom: 1px solid #ccc; /* Light border for each job entry */
+    padding-bottom: 15px; /* Padding below each job */
+    margin-bottom: 15px; /* Space between job entries */
 }
 
 .experience .job:hover {
@@ -233,7 +334,7 @@ s
 }
 
 .experience .job:last-child {
-    border-bottom: none; /* Remove border for the last item */
+    border-bottom: none; /* No border for the last job entry */
     padding-bottom: 0;
     margin-bottom: 0;
 }
@@ -249,6 +350,7 @@ s
     .profile-img {
         width: 150px; /* Smaller profile image for tablets */
         height: 150px;
+        border: #0077b5;
     }
     
     .qr-code img {
@@ -262,6 +364,12 @@ s
     }
     .contact-item {
         padding: 8px; /* Slightly less padding for contact items */
+    }
+    .contact-icon {
+        display: inline-block;
+        width: 24px; /* Icon width */
+        text-align: center;
+        margin-right: 10px; /* Space between icon and text */
     }
     .profile-img {
         width: 120px; /* Smaller profile image for mobile */
