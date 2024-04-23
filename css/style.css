@@ -23,11 +23,54 @@ body, html {
 .profile-img {
     display: block;
     margin: 0 auto; /* Center the image */
-    width: 100px; /* Size of the image */
-    height: 100px; /* Keep it a square */
-    border-radius: 50%; /* Round it */
-    border: 3px solid #fff; /* Optional: adds white border around the image */
-    padding-top: 20px;
+    width: 200px; /* Width of the image, adjust as needed */
+    height: 200px; /* Height of the image, adjust as needed */
+    border-radius: 50%; /* Create a circular shape */
+    object-fit: cover; /* Ensures the image covers the circle */
+    border: 5px solid #ffffff; /* Optional: white border, you can change color and size */
+    background-color: #ffffff; /* White background in case the image is transparent */
+}
+
+
+/* About Me Section */
+#about-me {
+    background-color: #f0f8ff; /* Light background for the section */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    margin-bottom: 20px; /* Space below the section */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-left: 5px solid #1DA1F2; /* A colored bar on the left for some visual flair */
+}
+
+/* Skills Highlight Section */
+#skills-highlight {
+    background-color: #f7f7f74d; /* Another light background different from the About Me section */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    margin-bottom: 20px; /* Space below the section */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Consistent shadow as About Me */
+    border-left: 5px solid #1DA1F2; /* Consistent styling with About Me */
+}
+/* Skill Item */
+.skill {
+    background-color: #ffffff; /* White background for each skill item */
+    padding: 10px;
+    margin: 5px 0; /* Spacing between skill items */
+    border-radius: 5px; /* Slightly rounded corners for skill items */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Lighter shadow for the skill items */
+    display: flex;
+    align-items: center;
+}
+
+/* Skill Icon/Image */
+.skill img {
+    /* Adjust your skill images here if needed */
+    margin-right: 10px;
+}
+
+/* Skill Name */
+.skill span {
+    /* Styling for the text of the skill name */
 }
 
 .sidebar {
@@ -38,78 +81,62 @@ body, html {
 }
 
 /* Social links and QR code styles */
-.social-links {
-    position: absolute;
-    bottom: 50px; /* Distance from bottom of sidebar */
-    left: 0;
-    width: 100%; /* Ensures the content spans the full width of the sidebar */
-    text-align: left; /* Align the content to the left */
-}
-
+/* QR Code and 'SCAN ME' text adjustment */
 .qr-code {
-    position: absolute;
-    bottom: 10px; /* Adjust this value to place the elements correctly at the bottom */
-    left: 0;
-    width: 100%; /* Ensures the content spans the full width of the sidebar */
-    text-align: left; /* Align the content to the left */
+    text-align: center; /* Center the QR code */
+    position: relative; /* For absolute positioning the 'SCAN ME' text */
+    margin-bottom: 20px; /* Space below the QR code */
 }
 
 .qr-code img {
-    width: 80px; /* Set the width of your QR code image */
+    width: 200px; /* Adjust width as needed */
     height: auto; /* Maintain aspect ratio */
+    display: block; /* Display block to take up the full width */
+    margin: 0 auto; /* Center the QR code */
 }
 
 .qr-code p {
-    display: inline-block;
-    margin-left: 10px; /* Spacing after the QR code */
-    font-size: 0.8em; /* Smaller font size */
-    vertical-align: middle; /* Align text with QR code image */
-    color: #fff; /* White color text */
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset by half the width and height to truly center */
+    margin: 0; /* No margin needed */
+    color: #fff; /* Text color */
+    font-size: 0.8em; /* Adjust font size as needed */
+    z-index: 1; /* Ensure the text is above the QR code image */
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
-    .sidebar {
-        padding-bottom: 100px; /* Adjust sidebar padding for tablet sizes */
-    }
-    .qr-code img {
-        width: 60px; /* Adjust QR code size for tablet sizes */
-    }
-    .qr-code p {
-        font-size: 0.7em; /* Smaller 'SCAN ME' text for tablets */
-    }
+/* Social Links adjustments */
+.social-links {
+    text-align: center; /* Center the social icons */
+    padding: 20px 0; /* Add padding above and below the icons */
 }
 
+.social-icon {
+    margin: 0 10px; /* Space between icons */
+    color: #fff; /* Default icon color, used for any icons without a brand color defined */
+    font-size: 24px; /* Adjust the size as needed */
+}
+
+/* Brand-specific colors for each social network */
+.social-icon.linkedin { color: #0077b5; } /* LinkedIn blue */
+.social-icon.facebook { color: #3b5998; } /* Facebook blue */
+.social-icon.instagram { color: #e4405f; } /* Instagram pink/red */
+.social-icon.twitter { color: #1da1f2; } /* Twitter blue */
+.social-icon.github { color: #333; } /* GitHub black/grayscale */
+/* Ensure social links are at the bottom of the sidebar */
+.sidebar {
+    padding-bottom: 60px; /* Adjust this value to make sure there's enough space at the bottom */
+}
+
+/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
-    .sidebar {
-        padding-bottom: 80px; /* Adjustments for smaller tablets and large phones */
-    }
-    .social-links,
-    .qr-code {
-        position: static; /* Remove absolute positioning for stacking */
-        text-align: center; /* Center-align for better presentation on smaller screens */
-    }
-    .qr-code img {
-        width: 50px; /* Smaller QR code for smaller screens */
-    }
-    .qr-code p {
-        margin-left: 5px; /* Smaller spacing after the QR code */
-    }
+    /* ... */
 }
 
+/* Further responsive adjustments */
 @media (max-width: 576px) {
-    .sidebar {
-        padding-bottom: 60px; /* Adjustments for small phones */
-    }
-    .social-links a,
-    .social-links img {
-        margin: 5px; /* Larger clickable area for small touchscreens */
-    }
-    .qr-code p {
-        display: block; /* Make 'SCAN ME' text appear below the QR code */
-        margin-left: 0;
-        margin-top: 5px; /* Spacing above the 'SCAN ME' text */
-    }
+    /* ... */
 }
 
 
@@ -168,6 +195,13 @@ body, html {
     font-size: 1.2em; /* Adjust to your preference */
 }
 
+.google-maps iframe {
+    width: 100%; /* Full width of the sidebar container */
+    height: 150px; /* Set the height of the Google Maps iframe */
+    border: 0; /* Remove border for a cleaner look */
+    margin-bottom: 20px; /* Space below the map */
+}
+
 /* Responsive adjustments */
 @media (max-width: 992px) { /* Adjust for tablets */
     .profile-img {
@@ -216,7 +250,11 @@ body, html {
     }
     
     .qr-code-img {
-        width: 50px;
+        width: 80px; /* Adjust width as needed */
+        height: auto; /* Maintain aspect ratio */
+        display: block; /* Display block to take up the full width */
+        margin: 0 auto; /* Center the QR code */
+
     }
     
     .sidebar {
