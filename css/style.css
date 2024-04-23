@@ -23,6 +23,17 @@ body, html {
 }
 
 /* About Me Section */
+#about-me {
+    text-align: left; /* Align to left */
+    background-color: #f0f8ff; /* Blizzard Pearl color */
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#about-me h2 {
+    margin-bottom: 10px;
+}
+
 #about-me p {
     font-size: 24px;
     margin-bottom: 10px;
@@ -134,6 +145,13 @@ body, html {
 /* Experience Section Styling */
 .experience {
     background-color: #ffffff; /* Change background to white */
+    text-align: left; /* Align to left */
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.experience h2 {
+    margin-bottom: 10px;
 }
 
 .experience .job {
