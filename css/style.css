@@ -11,6 +11,13 @@ body, html {
     max-width: 1024px;
     background: #fff;
 }
+.profile-img {
+    width: 200px; /* Or any size you prefer */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Circular profile picture */
+    display: block;
+    margin: 0 auto 20px; /* Center align in the sidebar with margin bottom */
+}
 
 .sidebar {
     background: #f8f9fa;
@@ -79,4 +86,26 @@ body, html {
         background: none;
         padding: 0;
     }
+}
+.experience .job + .job {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.experience h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.experience .dates {
+    font-size: 14px;
+    font-style: italic;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.experience p {
+    font-size: 16px;
+    line-height: 1.6;
 }
