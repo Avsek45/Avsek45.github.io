@@ -73,6 +73,31 @@ body, html {
     text-decoration: underline;
 }
 
+.contact i {
+    width: 20px; /* Ensuring consistent width for inline icons */
+    margin-right: 10px; /* Space between icon and text */
+    color: #3498db; /* Optional: color for icons */
+    text-align: center;
+}
+
+.contact p {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Make sure the links in the contact information are styled appropriately */
+.contact p a {
+    color: #333; /* or choose the color that fits your design */
+    text-decoration: none;
+}
+
+.contact p a:hover {
+    text-decoration: underline;
+}
+
+
 .interests ul {
     list-style: none;
     padding-left: 0;
