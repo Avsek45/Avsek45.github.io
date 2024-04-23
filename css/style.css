@@ -1,330 +1,315 @@
-/* Base and Reset Styles */
+/* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body, html {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: #000000; /* Black background for overall page */
-    color: #ffffff; /* White text color for better readability */
+    background-color: #000000; /* Ensure the base background is black */
+    color: #ffffff; /* Text color set to white for readability */
 }
-/* Container for the resume content */
+
 .resume-container {
     width: 100%;
     max-width: 1024px;
-    margin: 20px auto;
-    background-color: #ffffff; /* White background for container */
+    margin: 20px auto; /* Ensure center alignment and consistent margin */
+    padding: 20px; /* Padding inside the container */
+    background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    position: relative; /* Needed for absolute positioning of watermark */
+    position: relative;
+    overflow: hidden; /* Helps contain floated elements or overflowing content */
 }
-/* Profile Image */
+
+
+/* Profile image styling */
 .profile-img {
     display: block;
     margin: 0 auto; /* Center the image */
-    width: 200px; /* Width of the image, adjust as needed */
-    height: 200px; /* Height of the image, adjust as needed */
-    border-radius: 50%; /* Create a circular shape */
-    object-fit: cover; /* Ensures the image covers the circle */
-    border: 5px solid #ffffff; /* Optional: white border, you can change color and size */
-    background-color: #ffffff; /* White background in case the image is transparent */
+    width: 200px; /* Adjust as needed, and make responsive below */
+    height: 200px;
+    border-radius: 50%; /* Circle shape */
+    object-fit: cover;
+    border: 5px solid #ffffff; /* White border */
 }
 
-
 /* About Me Section */
+/* About Me Section Styling */
 #about-me {
-    background-color: #f0f8ff; /* Light background for the section */
+    background-color: #f5f5f5; /* Light grey background for a softer look */
+    color: #333333; /* Dark grey text for contrast */
     padding: 20px;
     border-radius: 10px; /* Rounded corners */
-    margin-bottom: 20px; /* Space below the section */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    border-left: 5px solid #1DA1F2; /* A colored bar on the left for some visual flair */
+    margin-bottom: 30px; /* Space below the section */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center; /* Centered text */
+}
+
+/* Contact Section Styling */
+.contact {
+    background-color: #f5f5f5; /* Matching light grey background */
+    color: #333333; /* Matching dark grey text */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    margin-bottom: 30px; /* Space below the section */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Consistent shadow for depth */
+    display: flex;
+    flex-direction: column; /* Stack contact items */
+    align-items: center; /* Center items */
+}
+
+/* Contact Items */
+.contact-item {
+    background-color: #ffffff; /* White background for each item */
+    padding: 10px;
+    margin: 8px 0; /* Spacing between contact items */
+    border-radius: 5px; /* Rounded corners for contact items */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Even more subtle shadow */
+    width: 100%; /* Full width of the parent container */
+    box-sizing: border-box; /* Ensures padding does not add to the width */
+    display: flex;
+    align-items: center; /* Align icon and text */
+}
+
+/* Contact Icons */
+.contact-item i {
+    color: #007bff; /* Bootstrap's primary blue as an accent color */
+    margin-right: 15px; /* Space between icon and text */
+    flex-shrink: 0; /* Prevents icon from shrinking */
+}
+
+/* Contact Text */
+.contact-item span, 
+.contact-item a {
+    color: #333333; /* Dark grey text for readability */
+    text-decoration: none; /* Removes underline from links */
 }
 
 /* Skills Highlight Section */
+/* Skills Highlight Section Styling */
 #skills-highlight {
-    background-color: #f7f7f74d; /* Another light background different from the About Me section */
+    background-color: #e8f0fe; /* Soft blue background */
+    color: #333333; /* Dark grey text for contrast */
     padding: 20px;
-    border-radius: 10px; /* Rounded corners */
-    margin-bottom: 20px; /* Space below the section */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Consistent shadow as About Me */
-    border-left: 5px solid #1DA1F2; /* Consistent styling with About Me */
+    border-radius: 10px; /* Rounded corners for a smoother appearance */
+    margin-bottom: 20px; /* Space between sections */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-left: 4px solid #007bff; /* Accent color border for a touch of style */
 }
-/* Skill Item */
+
+/* Individual skill item styling */
 .skill {
     background-color: #ffffff; /* White background for each skill item */
+    color: #333333; /* Dark grey text ensures readability */
     padding: 10px;
-    margin: 5px 0; /* Spacing between skill items */
-    border-radius: 5px; /* Slightly rounded corners for skill items */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Lighter shadow for the skill items */
+    margin: 10px 0; /* Spacing between skill items */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Light shadow for depth */
     display: flex;
-    align-items: center;
+    align-items: center; /* Aligns icon and text centrally */
 }
 
 /* Skill Icon/Image */
 .skill img {
-    /* Adjust your skill images here if needed */
-    margin-right: 10px;
+    width: 24px; /* Fixed width for icons */
+    height: 24px; /* Fixed height for icons to maintain aspect ratio */
+    margin-right: 10px; /* Space between icon and text */
 }
 
-/* Skill Name */
+/* Skill Name Text Styling */
 .skill span {
-    /* Styling for the text of the skill name */
+    font-size: 16px; /* Adequate font size for readability */
+    font-weight: bold; /* Bold text to enhance visibility */
 }
+s
 
+/* Sidebar styling */
 .sidebar {
-    position: relative; /* Enables absolute positioning relative to sidebar */
-    background-color: #1DA1F2; /* Blue background for the sidebar */
-    padding-bottom: 120px; /* Space for social links and QR code at the bottom */
-    /* Other styles you may have for sidebar */
+    background-color: #1DA1F2; /* Sidebar background */
+    padding-bottom: 120px; /* Space for QR code and social links */
 }
 
-/* Social links and QR code styles */
-/* QR Code and 'SCAN ME' text adjustment */
+/* QR code and 'SCAN ME' text styling */
+./* QR Code container styling */
 .qr-code {
-    text-align: center; /* Center the QR code */
-    position: relative; /* For absolute positioning the 'SCAN ME' text */
+    text-align: center; /* Center align QR code within the container */
+    padding: 20px; /* Padding around the QR code */
     margin-bottom: 20px; /* Space below the QR code */
+    background-color: #ffffff; /* White background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
+/* QR Code image styling */
 .qr-code img {
-    width: 200px; /* Adjust width as needed */
+    width: 100px; /* Adjust size as needed */
     height: auto; /* Maintain aspect ratio */
     display: block; /* Display block to take up the full width */
     margin: 0 auto; /* Center the QR code */
 }
 
+/* Text under the QR code */
 .qr-code p {
-    position: absolute;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Offset by half the width and height to truly center */
-    margin: 0; /* No margin needed */
-    color: #fff; /* Text color */
-    font-size: 0.8em; /* Adjust font size as needed */
-    z-index: 1; /* Ensure the text is above the QR code image */
+    color: #333333; /* Dark grey text for readability */
+    font-size: 0.9em; /* Smaller font size */
+    margin-top: 5px; /* Space above the text */
 }
 
-/* Social Links adjustments */
+
+/* Social Links container */
 .social-links {
-    text-align: center; /* Center the social icons */
-    padding: 20px 0; /* Add padding above and below the icons */
+    text-align: center; /* Center all social links */
+    padding: 20px; /* Padding around the links */
+    margin-bottom: 20px; /* Space below the social links section */
+    background-color: #ffffff; /* White background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
+/* Individual social link styling */
 .social-icon {
     margin: 0 10px; /* Space between icons */
-    color: #fff; /* Default icon color, used for any icons without a brand color defined */
-    font-size: 24px; /* Adjust the size as needed */
+    color: inherit; /* Inherits color from parent container */
+    font-size: 24px; /* Icon size */
 }
 
-/* Brand-specific colors for each social network */
+/* Specific brand colors for each social network icon */
 .social-icon.linkedin { color: #0077b5; } /* LinkedIn blue */
 .social-icon.facebook { color: #3b5998; } /* Facebook blue */
-.social-icon.instagram { color: #e4405f; } /* Instagram pink/red */
+.social-icon.instagram { color: #e4405f; } /* Instagram gradient red */
 .social-icon.twitter { color: #1da1f2; } /* Twitter blue */
-.social-icon.github { color: #333; } /* GitHub black/grayscale */
-/* Ensure social links are at the bottom of the sidebar */
-.sidebar {
-    padding-bottom: 60px; /* Adjust this value to make sure there's enough space at the bottom */
-}
+.social-icon.github { color: #333; } /* GitHub black */
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-    /* ... */
-}
-
-/* Further responsive adjustments */
-@media (max-width: 576px) {
-    /* ... */
+/* Hover effects for social icons */
+.social-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge icons on hover */
+    transition: transform 0.2s ease-in-out; /* Smooth transition for scale effect */
 }
 
 
-.skill {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.skill img {
-    height: 1em; /* This sets the logo height to match the font size of the skill name */
-    margin-right: 10px;
-    vertical-align: middle; /* Aligns the logo with the middle of the text */
-}
-
-.skill span {
-    /* Adjust the line height if necessary to align better with the logos */
-    line-height: 1.2em;
-}
-
-
-@media (max-width: 768px) {
-    .skill img {
-        height: 1em; /* Keep the size consistent with the text */
-    }
-
-    .skill span {
-        font-size: smaller; /* Optionally, adjust the font size on smaller screens */
-    }
-}
-
-@media (max-width: 576px) {
-    .skill {
-        /* If the screen is really small, you might want to stack them vertically */
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .skill img {
-        margin: 0 0 5px 0; /* Adjust margins for a vertical layout */
-        height: 1.5em; /* You can make the logo slightly larger if needed */
-    }
-}
-
-
-/* Contact Details - Place the icon and text on the same line */
-.contact-item {
-    display: flex;
-    align-items: center; /* Aligns the icon and text vertically */
-    margin-bottom: 10px; /* Space between contact items */
-}
-
-.contact-item i {
-    margin-right: 10px; /* Space between icon and text */
-    font-size: 1.2em; /* Adjust to your preference */
-}
-
+/* Google Maps iframe */
 .google-maps iframe {
-    width: 100%; /* Full width of the sidebar container */
-    height: 150px; /* Set the height of the Google Maps iframe */
-    border: 0; /* Remove border for a cleaner look */
-    margin-bottom: 20px; /* Space below the map */
+    width: 100%;
+    height: 150px;
+    border: 0;
+    margin-bottom: 20px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) { /* Adjust for tablets */
-    .profile-img {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .qr-code-img {
-        width: 60px;
-    }
-    
-    /* Adjust sidebar padding to fit QR and social links */
-    .sidebar {
-        padding-bottom: 120px;
-    }
-    
-    /* Adjust skill icon size for tablets */
-    .skill i {
-        font-size: 1.3em;
-    }
-}
-
-@media (max-width: 768px) { /* Adjust for smaller tablets and large phones */
-    .sidebar {
-        padding-bottom: 100px;
-    }
-    
-    .skill {
-        justify-content: flex-start; /* Align skills to the start (left) */
-    }
-    
-    .skill i {
-        font-size: 1.2em;
-    }
-    
-    .social-links, .qr-code {
-        position: static; /* Stack QR and social links */
-        padding-bottom: 0;
-    }
-}
-
-@media (max-width: 576px) { /* Adjust for small phones */
-    .profile-img {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .qr-code-img {
-        width: 80px; /* Adjust width as needed */
-        height: auto; /* Maintain aspect ratio */
-        display: block; /* Display block to take up the full width */
-        margin: 0 auto; /* Center the QR code */
-
-    }
-    
-    .sidebar {
-        padding-bottom: 80px;
-    }
-    
-    /* On small screens, stack the skill icons and text vertically for better readability */
-    .skill {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    
-    .skill i {
-        margin: 0 0 5px 0; /* Only margin-bottom */
-        font-size: 2em; /* Increase size for better tap targets */
-    }
-    
-    .contact-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+/* Experience section */
+/* Experience section with added effects */
+/* Experience Section Styling */
+.experience {
+    width: calc(100% - 40px); /* Full width minus padding */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
 }
 
 .experience {
-    background-color: #ffffff;
-    color: #ffffff; /* Change background to white */
-    text-align: left; /* Align to left */
+    background-color: #e8f0fe; /* Soft blue for a calm, inviting look */
+    color: #333333; /* Dark gray text for readability */
     padding: 20px;
-    margin-bottom: 20px;
+    border-radius: 10px; /* Rounded corners for a smoother appearance */
+    margin-bottom: 20px; /* Space between sections */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding depth with a shadow */
 }
-.experience h2 {
-    margin-bottom: 10px;
+
+
+.experience:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow for lifted effect */
 }
+
+/* Experience job entries */
 .experience .job {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #222; /* Subtle border for each job entry */
     padding-bottom: 20px;
     margin-bottom: 20px;
+    transition: background-color 0.3s ease; /* Transition for hover effect */
 }
+
+.experience .job:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slight highlight effect on hover */
+}
+
 .experience .job:last-child {
-    border: 0; /* No border for the last job entry */
+    border-bottom: none; /* Remove border for the last item */
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
-.experience h3, .experience .dates {
-    text-align: left; /* Justify title and date to the left */
-    color: #000000; /* Black text for experience items */
+/* Adjust vertical spacing and alignment */
+.experience h2, .experience h3, .experience p {
+    margin-top: 0;
+    margin-bottom: 10px; /* Consistent bottom margin */
 }
-/* Media Queries for Responsive Adjustments */
-@media only screen and (max-width: 768px) {
-    /* Tablet adjustments */
-    .resume-container {
-        padding: 10px;
-    .experience {
-            background-color: #000000; /* Reaffirm background color for smaller tablets */
-        }
+
+
+/* Responsive design adjustments */
+@media (max-width: 992px) {
+    .profile-img {
+        width: 150px; /* Smaller profile image for tablets */
+        height: 150px;
+    }
+    
+    .qr-code img {
+        width: 60px; /* Smaller QR code for tablets */
     }
 }
-@media only screen and (max-width: 480px) {
-    /* Mobile adjustments */
-    .resume-container {
-        padding: 10px;
-    .experience {
-            background-color: #000000; /* Reaffirm background color for mobile phones */
-        }
+
+@media (max-width: 768px) {
+    #about-me, .contact {
+        margin-bottom: 20px; /* Smaller space below the sections for small screens */
+    }
+    .contact-item {
+        padding: 8px; /* Slightly less padding for contact items */
+    }
+    .profile-img {
+        width: 120px; /* Smaller profile image for mobile */
+        height: 120px;
+    }
+    
+    .sidebar {
+        padding-bottom: 100px; /* Adjust padding for mobile */
+    }
+    
+    .qr-code img {
+        width: 50px; /* Smaller QR code for mobile */
+    }
+    
+    .social-links a,
+    .social-links img {
+        margin: 0 5px; /* Smaller margin between social icons for mobile */
     }
 }
+
+@media (max-width: 576px) {
+    #about-me, .contact {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+    .contact-item {
+        margin: 5px 0; /* Smaller margin for contact items */
+    }
+    .profile-img {
+        width: 100px; /* Even smaller profile image for very small screens */
+        height: 100px;
+    }
+    
+    .skill {
+        flex-direction: column; /* Stack skill icon and text */
+        align-items: center; /* Center align items */
+    }
+    
+    .skill img {
+        margin-bottom: 5px; /* Margin between icon and text */
+    }
+}
+
 /* Link styling */
 a {
     color: #ffffff;
     text-decoration: none;
 }
+
 a:hover {
     text-decoration: underline;
 }
