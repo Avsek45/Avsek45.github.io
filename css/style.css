@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+/* Base and Reset Styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,127 +7,164 @@
 
 body, html {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #ffffff; /* White text color for better readability */
     background-color: #000000; /* Black background for overall page */
-    overflow-x: hidden; /* Prevents horizontal scroll */
+    color: #ffffff; /* White text color for better readability */
 }
 
-/* Resume Container */
+/* Container for the resume content */
 .resume-container {
+    width: 100%;
     max-width: 1024px;
     margin: 20px auto;
-    padding: 20px;
     background-color: #ffffff; /* White background for container */
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: relative; /* Needed for absolute positioning of watermark */
 }
 
-/* Sidebar */
-.sidebar {
-    background-color: #000080; /* Navy blue background */
-    padding: 20px;
-    color: #ffffff;
+/* About Me Section */
+#about-me p {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
-/* Main Content */
-.main-content {
-    background-color: #b0b0b0; /* Light grey background */
-    padding: 20px;
+/* Skills Highlight Section */
+#skills-highlight {
+    margin-top: 30px;
 }
 
-/* Header and Titles */
-.resume-container h1, .resume-container h2, .resume-container h3 {
+#skills-highlight h2 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* Profile Image */
-.profile-img {
-    display: block;
-    width: 150px; /* Fixed width */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 50%; /* Circular shape */
-    margin: 10px auto; /* Centered within its container */
-    border: 3px solid #3498db; /* Styled border */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-/* QR Code Styling */
-.qr-code-img {
-    display: block;
-    width: 150px; /* Fixed width */
-    height: auto; /* Maintain aspect ratio */
-    margin: 10px auto; /* Centered within its container */
+.skill {
+    margin: 10px;
+    text-align: center;
+    flex: 1 1 calc(33.33% - 20px); /* Each skill occupies 1/3 of the container width with margin */
+    max-width: calc(33.33% - 20px); /* Maximum width of each skill */
 }
 
-/* Contact Information */
+.skill i {
+    font-size: 40px; /* Adjust icon size as needed */
+    color: #007bff; /* FontAwesome default brand color */
+    margin-bottom: 10px;
+}
+
+.skill span {
+    font-size: 18px;
+}
+
+/* Media Query for Responsive Adjustments */
+@media only screen and (max-width: 768px) {
+    .skill {
+        flex: 1 1 calc(50% - 20px); /* Each skill occupies 1/2 of the container width with margin */
+        max-width: calc(50% - 20px); /* Maximum width of each skill */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .skill {
+        flex: 1 1 calc(100% - 20px); /* Each skill occupies full container width with margin */
+        max-width: calc(100% - 20px); /* Maximum width of each skill */
+    }
+}
+
+/* DevOps Watermark for Experience Section */
+.experience::before {
+    content: url('path/to/devops-logo.png'); /* Path to DevOps logo */
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.1; /* Subtle watermark opacity */
+    z-index: -1;
+}
+
+/* Sidebar and Main Content Styles */
+.sidebar, .main-content {
+    padding: 20px;
+}
+
+.sidebar {
+    background-color: #000080; /* Navy blue background */
+}
+
+/* Contact Items Left Align */
 .contact-item {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px; /* Spacing between icon and text */
+    align-items: flex-start; /* Align items to the start of the flex container */
+    flex-direction: column; /* Stack them vertically */
+    color: #000000; /* Black text for contact items */
 }
 
-/* Icon Styling */
-.social-links a, .contact-item i {
-    font-size: 24px; /* Icon size */
-    margin-right: 10px; /* Space after icons */
+.contact-item i {
+    color: #3498db; /* Icons color */
 }
 
-/* Experience Section */
-.experience .job {
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee; /* Separator between jobs */
+/* Social Icons with Brand Colors */
+.social-links a {
+    font-size: 24px;
+    margin-right: 15px;
+    color: inherit; /* Icons inherit text color */
 }
 
-.experience .job:last-child {
-    border-bottom: none; /* No border for the last job */
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    /* Tablet adjustments */
-    .resume-container {
-        padding: 10px;
-    }
-
-    .profile-img, .qr-code-img {
-        width: 120px; /* Smaller images on tablet */
-    }
-}
-
-@media (max-width: 480px) {
-    /* Mobile adjustments */
-    .sidebar, .main-content {
-        padding: 10px;
-    }
-
-    .profile-img, .qr-code-img {
-        width: 100px; /* Even smaller images on mobile */
-    }
-
-    .contact-item i, .social-links a {
-        font-size: 20px; /* Smaller icons on mobile */
-    }
-
-    .experience .job {
-        padding-bottom: 15px;
-    }
-}
-
-/* Map iframe should be responsive */
-.map iframe {
-    width: 100%;
-    height: 200px; /* Adjust height as needed */
-    border: none;
-}
-
-/* Brand colors for social media icons */
 .social-links a.facebook { color: #3b5998; }
 .social-links a.instagram { color: #e4405f; }
 .social-links a.twitter { color: #1da1f2; }
 .social-links a.github { color: #333; }
 .social-links a.linkedin { color: #0077b5; }
+
+/* QR Code Styling */
+.qr-code-img {
+    width: 100%; /* QR Code takes full width of its column */
+    max-width: 250px; /* Maximum width set to prevent it from being too large */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 10px auto; /* Center in the column */
+}
+
+/* Experience Section Styling */
+.experience {
+    background-color: #ffffff; /* Change background to white */
+}
+
+.experience .job {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.experience .job:last-child {
+    border: 0; /* No border for the last job entry */
+}
+
+.experience h3, .experience .dates {
+    text-align: left; /* Justify title and date to the left */
+    color: #000000; /* Black text for experience items */
+}
+
+/* Media Queries for Responsive Adjustments */
+@media only screen and (max-width: 768px) {
+    /* Tablet adjustments */
+    .resume-container {
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* Mobile adjustments */
+    .resume-container {
+        padding: 10px;
+    }
+}
 
 /* Link styling */
 a {
