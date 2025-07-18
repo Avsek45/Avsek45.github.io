@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
     <style>
+        /* Mobile-first responsive overrides */
         body {
             background: linear-gradient(to right, #1c1c1c, #343a40);
             color: white;
@@ -17,55 +18,66 @@
         }
         .resume-container {
             background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
             max-width: 1100px;
-            margin: auto;
+            margin: 10px auto;
         }
         .sidebar {
             background: rgba(255, 255, 255, 0.2);
             padding: 20px;
             border-radius: 10px;
             text-align: center;
+            margin-bottom: 20px;
         }
         .profile-img {
             width: 120px;
+            height: 120px;
             border-radius: 50%;
             margin-bottom: 15px;
+            object-fit: cover;
         }
         .skills {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
         }
         .skill {
             background: rgba(255, 255, 255, 0.2);
-            padding: 10px 15px;
+            padding: 8px 12px;
             border-radius: 8px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             font-weight: bold;
             transition: transform 0.3s;
+            font-size: 14px;
+            min-width: 120px;
+            justify-content: center;
         }
         .skill:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
+        }
+        .skill img {
+            width: 20px;
+            height: 20px;
         }
         .contact {
             margin-top: 20px;
             text-align: center;
-            padding: 10px;
+            padding: 15px;
             background: rgba(255, 255, 255, 0.2);
             border-radius: 8px;
         }
         .contact-item {
-            margin: 5px 0;
+            margin: 8px 0;
+            font-size: 14px;
         }
         .social-links {
             text-align: center;
-            margin-top: 10px;
+            margin-top: 15px;
         }
         .social-icon {
             font-size: 24px;
@@ -89,7 +101,222 @@
             transition: transform 0.3s;
         }
         .job:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
+        }
+        
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+            .resume-container {
+                padding: 10px;
+                margin: 5px;
+            }
+            .sidebar {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+            .profile-img {
+                width: 100px;
+                height: 100px;
+            }
+            .skills {
+                gap: 6px;
+            }
+            .skill {
+                padding: 6px 10px;
+                font-size: 12px;
+                min-width: 100px;
+                flex: 1 1 calc(50% - 6px);
+                max-width: calc(50% - 6px);
+            }
+            .skill img {
+                width: 18px;
+                height: 18px;
+            }
+            .contact {
+                padding: 12px;
+            }
+            .contact-item {
+                font-size: 13px;
+            }
+            .social-icon {
+                font-size: 20px;
+                margin: 0 8px;
+            }
+            .experience {
+                padding: 12px;
+            }
+            .job {
+                padding: 12px;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            h3 {
+                font-size: 1.2rem;
+            }
+            h4, h5 {
+                font-size: 1.1rem;
+            }
+        }
+        
+        /* New sections styling */
+        .summary {
+            font-size: 13px;
+            line-height: 1.5;
+            margin-top: 10px;
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        .specialization-list {
+            display: grid;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        .spec-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            text-align: left;
+        }
+        
+        .language-list {
+            display: grid;
+            gap: 6px;
+            margin-top: 10px;
+        }
+        
+        .lang-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        
+        #professional-summary {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .summary-content p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        #education {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .education-item h3 {
+            color: #fff;
+            margin-bottom: 5px;
+        }
+        
+        .education-item h4 {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 5px;
+        }
+        
+        #certifications {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .cert-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .cert-item:hover {
+            transform: translateY(-3px);
+        }
+        
+        .cert-item i {
+            color: #ffd700;
+            font-size: 24px;
+        }
+        
+        .cert-item h4 {
+            margin: 0 0 5px 0;
+            color: #fff;
+            font-size: 14px;
+        }
+        
+        .cert-item p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 12px;
+        }
+        
+        @media (max-width: 768px) {
+            .cert-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .cert-item {
+                padding: 12px;
+            }
+            
+            .summary {
+                font-size: 12px;
+            }
+            
+            .spec-item, .lang-item {
+                font-size: 11px;
+                padding: 6px;
+            }
+            
+            #professional-summary {
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .skill {
+                flex: 1 1 100%;
+                max-width: 100%;
+                font-size: 11px;
+            }
+            .profile-img {
+                width: 80px;
+                height: 80px;
+            }
+            .social-icon {
+                font-size: 18px;
+                margin: 0 6px;
+            }
+            
+            .cert-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 10px;
+            }
+            
+            .cert-item i {
+                font-size: 20px;
+            }
         }
     </style>
 </head>
@@ -97,39 +324,184 @@
 <body>
     <div class="container resume-container">
         <div class="row">
-            <div class="col-md-4 sidebar">
-                <img src="img/Abhishek.jpg" alt="Profile Image of Abhishek Maharjan" class="profile-img">
+            <div class="col-lg-4 col-md-5 sidebar">
+                <img src="img/profile.jpg" alt="Profile Image of Abhishek Maharjan" class="profile-img">
                 <section id="about-me">
                     <h2>About Me</h2>
                     <h4>Abhishek Maharjan</h4>
-                    <h5>Release Engineer | DevOps Specialist</h5>
+                    <h5>Senior Release Engineer | DevOps Specialist</h5>
+                    <p class="summary">Committed to streamlining development processes through standardization and automation. 4+ years of DevOps experience delivering high-quality software solutions across financial, retail, and streaming media sectors.</p>
                 </section>
                 <section id="skills-highlight">
-                    <h2>Skills Highlight</h2>
+                    <h2>Core Technologies</h2>
                     <div class="skills">
                         <div class="skill"><img src="img/aws.png" alt="AWS" width="25"> <span>AWS</span></div>
+                        <div class="skill"><img src="img/gcp.png" alt="Google Cloud Platform" width="25"> <span>GCP</span></div>
                         <div class="skill"><img src="img/k8.png" alt="Kubernetes" width="25"> <span>Kubernetes</span></div>
                         <div class="skill"><img src="img/helm.png" alt="Helm" width="25"> <span>Helm Charts</span></div>
+                        <div class="skill"><img src="img/jenkins.png" alt="Jenkins" width="25"> <span>Jenkins</span></div>
+                        <div class="skill"><img src="img/tf.png" alt="Terraform" width="25"> <span>Terraform</span></div>
+                        <div class="skill"><img src="img/docker.png" alt="Docker" width="25"> <span>Docker</span></div>
+                        <div class="skill"><img src="img/python.png" alt="Python" width="25"> <span>Python</span></div>
+                        <div class="skill"><img src="img/bash.png" alt="Bash" width="25"> <span>Bash</span></div>
+                        <div class="skill"><img src="img/github.png" alt="Git" width="25"> <span>Git/GitHub</span></div>
+                    </div>
+                </section>
+                <section id="specializations">
+                    <h2>Specializations</h2>
+                    <div class="specialization-list">
+                        <div class="spec-item">📦 Software Deployment</div>
+                        <div class="spec-item">🔄 Continuous Integration/Delivery</div>
+                        <div class="spec-item">🚀 Release Automation</div>
+                        <div class="spec-item">☁️ Cloud Infrastructure</div>
+                        <div class="spec-item">🛠️ DevOps Toolchain</div>
+                        <div class="spec-item">⚡ Build Automation</div>
                     </div>
                 </section>
                 <section class="contact">
                     <h2>Contact</h2>
-                    <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:amaharjan08@email.com">amaharjan08@email.com</a></div>
+                    <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:amaharjan08@gmail.com">amaharjan08@gmail.com</a></div>
+                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span>Berkeley, California</span></div>
+                </section>
+                <section id="languages">
+                    <h2>Languages</h2>
+                    <div class="language-list">
+                        <div class="lang-item">🇺🇸 English</div>
+                        <div class="lang-item">🇮🇳 Hindi</div>
+                        <div class="lang-item">🇳🇵 Nepali</div>
+                        <div class="lang-item">🏛️ Nepal Bhasa</div>
+                    </div>
                 </section>
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/abhishek-m-98421b26" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
                 </div>
                 <button id="download-resume" class="btn btn-primary mt-3">Download Resume as PDF</button>
             </div>
-            <div class="col-md-8 main-content">
+            <div class="col-lg-8 col-md-7 main-content">
+                <section id="professional-summary">
+                    <h2>Professional Summary</h2>
+                    <div class="summary-content">
+                        <p>As a Senior Release Engineer at Pluto TV, I am committed to streamlining development processes through standardization and automation, while fostering an engaging and enjoyable coding environment. With over four years of experience in DevOps, I have successfully implemented and maintained continuous integration and delivery pipelines, using tools such as Octopus, Jenkins, TeamCity, and Git.</p>
+                        <p>In my previous roles, I have leveraged my skills in Java, test automation, and AWS to deliver high-quality software products and services for the financial and retail sectors. I have also earned multiple certifications from Linux Academy, including DevOps Essentials and Certified Jenkins Engineer, to demonstrate my proficiency and passion for DevOps.</p>
+                    </div>
+                </section>
+                
                 <section class="experience">
-                    <h2>Experience</h2>
+                    <h2>Professional Experience</h2>
+                    
                     <div class="job">
-                        <h3>Release Engineer - <a href="https://pluto.tv" target="_blank">Pluto TV</a></h3>
-                        <p class="dates">Remote, United States | November 2021 - Present</p>
+                        <h3>Senior Release Engineer</h3>
+                        <h4><a href="https://pluto.tv" target="_blank">Pluto TV (Paramount)</a></h4>
+                        <p class="dates">December 2024 - Present (8 months) | United States</p>
                         <ul>
-                            <li>Develop and maintain deployment pipelines for AWS infrastructure.</li>
+                            <li>Lead release engineering initiatives for one of the world's largest free streaming platforms</li>
+                            <li>Implement advanced CI/CD pipelines supporting millions of streaming users globally</li>
+                            <li>Mentor junior engineers and establish release engineering best practices</li>
+                            <li>Drive automation initiatives reducing deployment time by 60%</li>
                         </ul>
+                    </div>
+                    
+                    <div class="job">
+                        <h3>Release Engineer</h3>
+                        <h4><a href="https://pluto.tv" target="_blank">Pluto TV</a></h4>
+                        <p class="dates">November 2021 - December 2024 (3 years 2 months) | United States</p>
+                        <ul>
+                            <li>Developed and maintained deployment pipelines for AWS infrastructure supporting 70M+ users</li>
+                            <li>Implemented Infrastructure as Code using Terraform and CloudFormation</li>
+                            <li>Orchestrated containerized applications using Kubernetes and Helm charts</li>
+                            <li>Established monitoring and alerting systems ensuring 99.9% uptime</li>
+                            <li>Collaborated with development teams to optimize build and deployment processes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="job">
+                        <h3>DevOps Engineer</h3>
+                        <h4>TRC Healthcare</h4>
+                        <p class="dates">July 2020 - September 2021 (1 year 3 months) | Stockton, California</p>
+                        <ul>
+                            <li>Built and maintained CI/CD pipelines using Jenkins and TeamCity</li>
+                            <li>Managed AWS cloud infrastructure and automated deployment processes</li>
+                            <li>Implemented configuration management using Ansible and Puppet</li>
+                            <li>Improved deployment frequency from weekly to daily releases</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="job">
+                        <h3>Release Engineer</h3>
+                        <h4>Green Dot Corporation</h4>
+                        <p class="dates">August 2018 - March 2020 (1 year 8 months) | San Diego, California</p>
+                        <ul>
+                            <li>Managed release cycles for financial services applications</li>
+                            <li>Implemented automated testing frameworks reducing manual testing by 80%</li>
+                            <li>Coordinated releases across multiple environments and teams</li>
+                            <li>Established release documentation and rollback procedures</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="job">
+                        <h3>Software Development Engineer In Test</h3>
+                        <h4>Safeway</h4>
+                        <p class="dates">June 2015 - February 2017 (1 year 9 months) | Pleasanton, CA</p>
+                        <ul>
+                            <li>Developed automated test suites for e-commerce applications</li>
+                            <li>Created performance testing frameworks using Java and Selenium</li>
+                            <li>Collaborated with QA teams to improve testing processes</li>
+                            <li>Reduced testing cycle time by 50% through automation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="job">
+                        <h3>Information Technology Help Desk</h3>
+                        <h4>Winona State University</h4>
+                        <p class="dates">December 2011 - January 2014 (2 years 2 months) | Winona, MN</p>
+                        <ul>
+                            <li>Provided technical support for university's IT infrastructure</li>
+                            <li>Managed user accounts and system administration tasks</li>
+                            <li>Troubleshot hardware and software issues for students and faculty</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section id="education">
+                    <h2>Education</h2>
+                    <div class="education-item">
+                        <h3>Bachelor of Applied Science (B.A.Sc.)</h3>
+                        <h4>Winona State University</h4>
+                        <p class="dates">Information Systems, General | 2008 - 2013</p>
+                    </div>
+                </section>
+                
+                <section id="certifications">
+                    <h2>Certifications</h2>
+                    <div class="cert-grid">
+                        <div class="cert-item">
+                            <i class="fas fa-certificate"></i>
+                            <div>
+                                <h4>HashiCorp Certified Terraform Associate</h4>
+                                <p>Infrastructure as Code</p>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fas fa-certificate"></i>
+                            <div>
+                                <h4>Certified Jenkins Engineer</h4>
+                                <p>2017 - CI/CD Automation</p>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fas fa-certificate"></i>
+                            <div>
+                                <h4>Jenkins and Build Automation</h4>
+                                <p>Advanced Pipeline Management</p>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fas fa-certificate"></i>
+                            <div>
+                                <h4>Administering Artifactory</h4>
+                                <p>Artifact Repository Management</p>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div>

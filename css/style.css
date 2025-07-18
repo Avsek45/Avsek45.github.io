@@ -359,56 +359,164 @@ s
 }
 
 @media (max-width: 768px) {
-    #about-me, .contact {
-        margin-bottom: 20px; /* Smaller space below the sections for small screens */
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
     }
-    .contact-item {
-        padding: 8px; /* Slightly less padding for contact items */
-    }
-    .contact-icon {
-        display: inline-block;
-        width: 24px; /* Icon width */
-        text-align: center;
-        margin-right: 10px; /* Space between icon and text */
-    }
-    .profile-img {
-        width: 120px; /* Smaller profile image for mobile */
-        height: 120px;
+    
+    .resume-container {
+        margin: 5px;
+        padding: 10px;
     }
     
     .sidebar {
-        padding-bottom: 100px; /* Adjust padding for mobile */
+        margin-bottom: 20px;
+        padding: 15px;
+    }
+    
+    .main-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    #about-me, .contact {
+        margin-bottom: 15px;
+        padding: 15px;
+    }
+    
+    .contact-item {
+        padding: 8px;
+        font-size: 14px;
+    }
+    
+    .contact-icon {
+        display: inline-block;
+        width: 24px;
+        text-align: center;
+        margin-right: 10px;
+    }
+    
+    .profile-img {
+        width: 100px;
+        height: 100px;
     }
     
     .qr-code img {
-        width: 50px; /* Smaller QR code for mobile */
+        width: 50px;
     }
     
     .social-links a,
     .social-links img {
-        margin: 0 5px; /* Smaller margin between social icons for mobile */
+        margin: 0 5px;
+    }
+    
+    .skills {
+        gap: 8px;
+    }
+    
+    .skill {
+        flex: 1 1 calc(50% - 8px);
+        min-width: calc(50% - 8px);
+        font-size: 12px;
+        padding: 8px;
+        margin: 4px 0;
+    }
+    
+    .experience {
+        padding: 12px;
+        margin-top: 15px;
+    }
+    
+    .job {
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+    
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.4rem; }
+    h3 { font-size: 1.2rem; }
+    h4, h5 { font-size: 1.1rem; }
+    
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
     }
 }
 
 @media (max-width: 576px) {
+    .container {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    .resume-container {
+        margin: 2px;
+        padding: 8px;
+    }
+    
+    .sidebar {
+        padding: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .main-content {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
     #about-me, .contact {
-        padding: 15px; /* Adjust padding for smaller screens */
+        padding: 12px;
+        margin-bottom: 12px;
     }
+    
     .contact-item {
-        margin: 5px 0; /* Smaller margin for contact items */
+        margin: 4px 0;
+        font-size: 13px;
     }
+    
     .profile-img {
-        width: 100px; /* Even smaller profile image for very small screens */
-        height: 100px;
+        width: 80px;
+        height: 80px;
     }
     
     .skill {
-        flex-direction: column; /* Stack skill icon and text */
-        align-items: center; /* Center align items */
+        flex: 1 1 100%;
+        min-width: 100%;
+        font-size: 11px;
+        padding: 6px;
+        margin: 2px 0;
+        justify-content: center;
     }
     
     .skill img {
-        margin-bottom: 5px; /* Margin between icon and text */
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+    }
+    
+    .experience {
+        padding: 10px;
+    }
+    
+    .job {
+        padding: 10px;
+    }
+    
+    h1 { font-size: 1.4rem; }
+    h2 { font-size: 1.2rem; }
+    h3 { font-size: 1.1rem; }
+    h4, h5 { font-size: 1rem; }
+    
+    .btn {
+        font-size: 12px;
+        padding: 6px 12px;
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .social-icon {
+        font-size: 18px;
+        margin: 0 6px;
     }
 }
 
