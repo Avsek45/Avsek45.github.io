@@ -1565,7 +1565,42 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js"></script>
-    <script src="js/pdf-generator.js"></script>
+    <script>
+        // Simple PDF Download Function
+        document.addEventListener('DOMContentLoaded', function() {
+            const downloadBtn = document.getElementById('download-resume');
+            if (downloadBtn) {
+                downloadBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Show downloading state
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-download"></i> Downloading...';
+                    this.disabled = true;
+                    
+                    // Create download link
+                    const link = document.createElement('a');
+                    link.href = 'resume.pdf';
+                    link.download = 'Abhishek_Maharjan_Resume.pdf';
+                    link.target = '_blank';
+                    
+                    // Trigger download
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    // Reset button
+                    setTimeout(() => {
+                        this.innerHTML = '<i class="fas fa-check"></i> Downloaded!';
+                        setTimeout(() => {
+                            this.innerHTML = originalText;
+                            this.disabled = false;
+                        }, 1500);
+                    }, 500);
+                });
+            }
+        });
+    </script>
     <script>
 
         // Create Floating Particles
