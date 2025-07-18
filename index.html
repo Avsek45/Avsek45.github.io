@@ -489,8 +489,8 @@
         .profile-contact-container {
             display: flex;
             align-items: flex-start;
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .profile-section {
@@ -500,6 +500,31 @@
 
         .contact-section-horizontal {
             flex: 1;
+        }
+
+        .profile-download-section {
+            margin-top: 1rem;
+        }
+
+        /* Section Divider */
+        .section-divider {
+            margin: 2rem 0;
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-primary), transparent);
+            position: relative;
+        }
+
+        .section-divider::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            background: var(--text-accent);
+            border-radius: 50%;
         }
 
         /* AI and DevOps Horizontal Layout */
@@ -536,7 +561,7 @@
         .contact-icon {
             width: 20px;
             height: 20px;
-            color: var(--text-accent);
+            color: var(--text-primary);
             transition: transform 0.3s var(--ease-out-expo);
         }
 
@@ -1002,7 +1027,7 @@
 
             .ai-devops-container {
                 grid-template-columns: 1fr;
-                gap: 1rem;
+                gap: 1.5rem;
             }
             
             .cert-grid {
@@ -1163,6 +1188,11 @@
                         <h1 class="profile-name">Abhishek Maharjan</h1>
                         <p class="profile-title">Senior Release Engineer | DevOps Architect</p>
                         <p class="profile-subtitle">AI Evangelist | AWS Certified | Kubernetes Expert | CI/CD Pipeline Specialist</p>
+                        <div class="profile-download-section">
+                            <button id="download-resume" class="download-btn">
+                                <i class="fas fa-download"></i> Download Resume
+                            </button>
+                        </div>
                     </div>
 
                     <!-- Contact Section -->
@@ -1198,14 +1228,8 @@
                     </div>
                 </div>
 
-                <!-- Download Resume Button -->
-                <div class="sidebar-section">
-                    <div class="social-container">
-                        <button id="download-resume" class="download-btn">
-                            <i class="fas fa-download"></i> Download Resume
-                        </button>
-                    </div>
-                </div>
+                <!-- Section Divider -->
+                <hr class="section-divider">
 
                 <!-- Core Technologies -->
                 <div class="sidebar-section">
