@@ -248,15 +248,13 @@
 
         /* Elegant Typography */
         .profile-name {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 2rem;
             font-weight: 700;
-            background: var(--text-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text-primary);
             margin-bottom: 0.5rem;
             letter-spacing: -0.02em;
+            text-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
         }
 
         .profile-title {
@@ -265,6 +263,15 @@
             font-weight: 500;
             margin-bottom: 1rem;
             position: relative;
+            line-height: 1.4;
+        }
+
+        .profile-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-accent);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            line-height: 1.4;
         }
 
         .profile-title::after {
@@ -380,7 +387,7 @@
         }
 
         .skill-name {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 500;
             color: var(--text-secondary);
             transition: color 0.3s ease;
@@ -503,9 +510,10 @@
             border-radius: 10px;
             padding: 0.75rem;
             text-align: center;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--text-secondary);
             transition: all 0.3s var(--ease-out-expo);
+            font-weight: 500;
         }
 
         .language-item:hover {
@@ -625,16 +633,14 @@
         }
 
         .content-section-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 2rem;
             font-weight: 700;
-            background: var(--text-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text-primary);
             margin-bottom: 2rem;
             position: relative;
             display: inline-block;
+            text-shadow: 0 2px 10px rgba(102, 126, 234, 0.2);
         }
 
         .content-section-title::after {
@@ -680,9 +686,10 @@
 
         .summary-text {
             font-size: 1.05rem;
-            line-height: 1.8;
+            line-height: 1.7;
             color: var(--text-secondary);
             margin-bottom: 1.5rem;
+            font-weight: 400;
         }
 
         .summary-text:last-child {
@@ -775,6 +782,8 @@
             margin-bottom: 0.75rem;
             color: var(--text-secondary);
             line-height: 1.6;
+            font-weight: 400;
+            font-size: 0.95rem;
         }
 
         .job-achievements li::before {
@@ -998,8 +1007,9 @@
                     </div>
                     <h1 class="profile-name">Abhishek Maharjan</h1>
                     <p class="profile-title">Senior Release Engineer | DevOps Architect</p>
+                    <p class="profile-subtitle">AWS Certified | Kubernetes Expert | CI/CD Pipeline Specialist</p>
                     <div class="profile-summary">
-                        Orchestrating cutting-edge development workflows with 7+ years of DevOps mastery and 13+ years of technology innovation across fintech, retail, and streaming platforms.
+                        Orchestrating cutting-edge development workflows with 7+ years of DevOps mastery and 13+ years of technology innovation. Expert in scaling cloud infrastructure for 70M+ users across fintech, retail, and streaming platforms. Specializing in zero-downtime deployments, container orchestration, and Infrastructure as Code.
                     </div>
                 </div>
 
