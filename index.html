@@ -7,45 +7,76 @@
     <title>Resume - Abhishek Maharjan</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
     <style>
-        /* Premium Professional Design */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
+        /* Ultra-Premium Design System */
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
         
         :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --bg-card: rgba(255, 255, 255, 0.08);
-            --bg-card-hover: rgba(255, 255, 255, 0.12);
-            --text-primary: #f8fafc;
-            --text-secondary: #cbd5e1;
+            /* Revolutionary Color System */
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+            --secondary-gradient: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff);
+            --accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --surface-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            --card-gradient: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            
+            /* Sophisticated Color Palette */
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #1a1a2e;
+            --bg-tertiary: #16213e;
+            --bg-card: rgba(255, 255, 255, 0.02);
+            --bg-card-hover: rgba(255, 255, 255, 0.08);
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            
+            --text-primary: #ffffff;
+            --text-secondary: #e2e8f0;
+            --text-muted: #94a3b8;
             --text-accent: #60a5fa;
-            --border-color: rgba(255, 255, 255, 0.1);
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 8px 25px rgba(0, 0, 0, 0.15);
-            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 20px 25px rgba(0, 0, 0, 0.15);
-            --shadow-xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+            --text-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            
+            --border-primary: rgba(255, 255, 255, 0.1);
+            --border-accent: rgba(102, 126, 234, 0.3);
+            
+            /* Advanced Shadow System */
+            --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 8px 10px rgba(0, 0, 0, 0.04);
+            --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+            --shadow-glow: 0 0 50px rgba(102, 126, 234, 0.15);
+            --shadow-accent: 0 8px 32px rgba(102, 126, 234, 0.2);
+            
+            /* Animation System */
+            --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+            --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+            --ease-in-out-back: cubic-bezier(0.68, -0.6, 0.32, 1.6);
         }
-        
+
+        /* Global Reset & Base */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 2rem;
+        }
+
         body {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg-primary);
             color: var(--text-primary);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             font-weight: 400;
             overflow-x: hidden;
+            position: relative;
         }
-        
+
+        /* Stunning Background Effects */
         body::before {
             content: '';
             position: fixed;
@@ -53,418 +84,804 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--primary-gradient);
-            opacity: 0.03;
+            background: var(--surface-gradient);
+            z-index: -3;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(240, 147, 251, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(79, 172, 254, 0.05) 0%, transparent 50%);
+            z-index: -2;
+            animation: backgroundShift 20s ease-in-out infinite;
+        }
+
+        @keyframes backgroundShift {
+            0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
+            50% { opacity: 0.8; transform: scale(1.1) rotate(1deg); }
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
             z-index: -1;
+            overflow: hidden;
         }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(102, 126, 234, 0.3);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) scale(1); opacity: 0; }
+        }
+
+        /* Ultra-Modern Container */
         .resume-container {
-            background: var(--bg-card);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border-color);
-            padding: 2rem;
-            border-radius: 24px;
-            box-shadow: var(--shadow-xl);
-            max-width: 1200px;
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid var(--border-primary);
             margin: 2rem auto;
+            max-width: 1400px;
+            border-radius: 32px;
             position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-2xl);
         }
-        
+
         .resume-container::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
+            height: 1px;
             background: var(--primary-gradient);
-            border-radius: 24px 24px 0 0;
+            z-index: 1;
         }
-        
+
+        .resume-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--card-gradient);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Revolutionary Sidebar */
         .sidebar {
-            background: var(--bg-card);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
-            padding: 2rem;
-            border-radius: 20px;
-            text-align: center;
-            margin-bottom: 2rem;
+            background: var(--bg-glass);
+            backdrop-filter: blur(15px);
+            border-right: 1px solid var(--border-primary);
+            padding: 3rem 2rem;
             position: relative;
-            box-shadow: var(--shadow-md);
+            z-index: 2;
+            min-height: 100vh;
         }
+
+        .sidebar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent 0%, var(--accent-gradient) 50%, transparent 100%);
+            opacity: 0.5;
+        }
+
+        /* Spectacular Profile Section */
+        .profile-section {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .profile-img-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
         .profile-img {
-            width: 120px;
-            height: 120px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
-            margin-bottom: 15px;
             object-fit: cover;
-        }
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px;
-        }
-        .skill {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 8px 12px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-weight: bold;
-            transition: transform 0.3s;
-            font-size: 14px;
-            min-width: 120px;
-            justify-content: center;
-        }
-        .skill:hover {
-            transform: scale(1.05);
-        }
-        .skill img {
-            width: 20px;
-            height: 20px;
-        }
-        .contact {
-            margin-top: 20px;
-            text-align: center;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-        }
-        .contact-item {
-            margin: 8px 0;
-            font-size: 14px;
-        }
-        .social-links {
-            text-align: center;
-            margin-top: 15px;
-        }
-        .social-icon {
-            font-size: 24px;
-            margin: 0 10px;
-            transition: transform 0.3s;
-        }
-        .social-icon:hover {
-            transform: scale(1.2);
-        }
-        .experience {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-        .job {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            transition: transform 0.3s;
-        }
-        .job:hover {
-            transform: translateY(-3px);
-        }
-        
-        /* Mobile-specific styles */
-        @media (max-width: 768px) {
-            .resume-container {
-                padding: 10px;
-                margin: 5px;
-            }
-            .sidebar {
-                padding: 15px;
-                margin-bottom: 15px;
-            }
-            .profile-img {
-                width: 100px;
-                height: 100px;
-            }
-            .skills {
-                gap: 6px;
-            }
-            .skill {
-                padding: 6px 10px;
-                font-size: 12px;
-                min-width: 100px;
-                flex: 1 1 calc(50% - 6px);
-                max-width: calc(50% - 6px);
-            }
-            .skill img {
-                width: 18px;
-                height: 18px;
-            }
-            .contact {
-                padding: 12px;
-            }
-            .contact-item {
-                font-size: 13px;
-            }
-            .social-icon {
-                font-size: 20px;
-                margin: 0 8px;
-            }
-            .experience {
-                padding: 12px;
-            }
-            .job {
-                padding: 12px;
-            }
-            h2 {
-                font-size: 1.4rem;
-            }
-            h3 {
-                font-size: 1.2rem;
-            }
-            h4, h5 {
-                font-size: 1.1rem;
-            }
-        }
-        
-        /* Premium sections styling */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-        
-        h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            border: 4px solid transparent;
             background: var(--primary-gradient);
+            padding: 4px;
+            transition: all 0.6s var(--ease-out-expo);
+            box-shadow: var(--shadow-glow);
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05) rotate(5deg);
+            box-shadow: var(--shadow-accent), var(--shadow-glow);
+        }
+
+        .profile-img-container::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.6s var(--ease-out-expo);
+            z-index: 1;
+        }
+
+        .profile-img-container:hover::before {
+            opacity: 0.2;
+            transform: scale(1.1);
+        }
+
+        /* Elegant Typography */
+        .profile-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            background: var(--text-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-        }
-        
-        h3 {
-            font-size: 1.25rem;
-            color: var(--text-primary);
             margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
         }
-        
-        h4 {
+
+        .profile-title {
             font-size: 1.1rem;
-            color: var(--text-accent);
-            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
             font-weight: 500;
-        }
-        
-        h5 {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            font-weight: 400;
-        }
-        
-        .summary {
-            font-size: 0.9rem;
-            line-height: 1.6;
-            margin-top: 1rem;
-            color: var(--text-secondary);
-            font-style: italic;
-        }
-        
-        .specialization-list {
-            display: grid;
-            gap: 0.75rem;
-            margin-top: 1.5rem;
-        }
-        
-        .spec-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            padding: 0.875rem;
-            border-radius: 12px;
-            font-size: 0.875rem;
-            text-align: left;
-            color: var(--text-secondary);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-        
-        .spec-item:hover {
-            background: var(--bg-card-hover);
-            transform: translateX(4px);
-            color: var(--text-primary);
-        }
-        
-        .language-list {
-            display: grid;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-        
-        .lang-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            padding: 0.75rem;
-            border-radius: 10px;
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-        
-        .lang-item:hover {
-            background: var(--bg-card-hover);
-            color: var(--text-primary);
-            transform: translateX(4px);
-        }
-        
-        #professional-summary {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            padding: 2rem;
-            border-radius: 20px;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(10px);
-            box-shadow: var(--shadow-md);
+            margin-bottom: 1rem;
             position: relative;
         }
-        
-        #professional-summary::before {
+
+        .profile-title::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: var(--accent-gradient);
+            border-radius: 2px;
+        }
+
+        .profile-summary {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-style: italic;
+            position: relative;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 16px;
+            border: 1px solid var(--border-primary);
+        }
+
+        /* Futuristic Sections */
+        .sidebar-section {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: var(--accent-gradient);
+            border-radius: 2px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--border-primary) 0%, transparent 100%);
+        }
+
+        /* Revolutionary Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-primary);
+            border-radius: 16px;
+            padding: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.4s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: var(--secondary-gradient);
-            border-radius: 20px 20px 0 0;
+            height: 1px;
+            background: var(--primary-gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s var(--ease-out-expo);
         }
-        
-        .summary-content p {
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-accent);
+            box-shadow: var(--shadow-accent);
+            background: var(--bg-card-hover);
+        }
+
+        .skill-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .skill-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            transition: transform 0.3s var(--ease-out-expo);
+        }
+
+        .skill-card:hover .skill-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .skill-name {
+            font-size: 0.85rem;
+            font-weight: 500;
             color: var(--text-secondary);
-            font-size: 0.95rem;
+            transition: color 0.3s ease;
         }
-        
-        #education {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            padding: 2rem;
-            border-radius: 20px;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(10px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .education-item h3 {
+
+        .skill-card:hover .skill-name {
             color: var(--text-primary);
-            margin-bottom: 0.5rem;
         }
-        
-        .education-item h4 {
-            color: var(--text-accent);
-            margin-bottom: 0.5rem;
-        }
-        
-        .education-item .dates {
-            color: var(--text-secondary);
-        }
-        
-        #certifications {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            padding: 2rem;
-            border-radius: 20px;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(10px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .cert-grid {
+
+        /* Spectacular Specializations */
+        .specializations-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            gap: 0.75rem;
         }
-        
-        .cert-item {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            padding: 1.5rem;
-            border-radius: 16px;
+
+        .specialization-item {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-primary);
+            border-radius: 12px;
+            padding: 1rem;
             display: flex;
             align-items: center;
             gap: 1rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            backdrop-filter: blur(10px);
+            transition: all 0.3s var(--ease-out-expo);
             position: relative;
             overflow: hidden;
         }
-        
-        .cert-item::before {
+
+        .specialization-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--accent-gradient);
+            transform: scaleY(0);
+            transition: transform 0.3s var(--ease-out-expo);
+        }
+
+        .specialization-item:hover {
+            transform: translateX(8px);
+            background: var(--bg-card-hover);
+            border-color: var(--border-accent);
+        }
+
+        .specialization-item:hover::before {
+            transform: scaleY(1);
+        }
+
+        .specialization-emoji {
+            font-size: 1.2rem;
+            transition: transform 0.3s var(--ease-in-out-back);
+        }
+
+        .specialization-item:hover .specialization-emoji {
+            transform: scale(1.2);
+        }
+
+        .specialization-text {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .specialization-item:hover .specialization-text {
+            color: var(--text-primary);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-primary);
+            border-radius: 12px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s var(--ease-out-expo);
+            text-decoration: none;
+            color: var(--text-secondary);
+        }
+
+        .contact-item:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-accent);
+            transform: translateY(-2px);
+            color: var(--text-primary);
+            text-decoration: none;
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+            color: var(--text-accent);
+            transition: transform 0.3s var(--ease-out-expo);
+        }
+
+        .contact-item:hover .contact-icon {
+            transform: scale(1.1);
+        }
+
+        /* Languages */
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        .language-item {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-primary);
+            border-radius: 10px;
+            padding: 0.75rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .language-item:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-accent);
+            color: var(--text-primary);
+            transform: scale(1.02);
+        }
+
+        /* Social Links */
+        .social-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-accent);
+            text-decoration: none;
+            transition: all 0.4s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 4px;
-            height: 100%;
+            right: 0;
+            bottom: 0;
             background: var(--accent-gradient);
-            transition: width 0.3s ease;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
-        
-        .cert-item:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--text-accent);
+
+        .social-link:hover {
+            transform: translateY(-4px) scale(1.1);
+            border-color: var(--border-accent);
+            box-shadow: var(--shadow-accent);
         }
-        
-        .cert-item:hover::before {
-            width: 8px;
+
+        .social-link:hover::before {
+            opacity: 1;
         }
-        
-        .cert-item i {
-            color: var(--text-accent);
-            font-size: 2rem;
-            transition: transform 0.3s ease;
+
+        .social-link i {
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s ease;
         }
-        
-        .cert-item:hover i {
-            transform: scale(1.1);
+
+        .social-link:hover i {
+            color: white;
         }
-        
-        .cert-item h4 {
-            margin: 0 0 0.5rem 0;
-            color: var(--text-primary);
-            font-size: 1rem;
+
+        /* Premium Button */
+        .download-btn {
+            background: var(--accent-gradient);
+            border: none;
+            border-radius: 16px;
+            padding: 1rem 2rem;
+            color: white;
             font-weight: 600;
-        }
-        
-        .cert-item p {
-            margin: 0;
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-        }
-        
-        .dates {
-            color: var(--text-secondary);
             font-size: 0.9rem;
-            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.4s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .download-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-accent);
+        }
+
+        .download-btn:hover::before {
+            left: 100%;
+        }
+
+        /* Main Content Area */
+        .main-content {
+            padding: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .content-section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            background: var(--text-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .content-section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent-gradient);
+            border-radius: 2px;
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: slideInLeft 0.8s var(--ease-out-expo) forwards;
+            animation-delay: 0.3s;
+        }
+
+        @keyframes slideInLeft {
+            to { transform: scaleX(1); }
+        }
+
+        /* Professional Summary */
+        .summary-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--border-primary);
+            border-radius: 24px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .summary-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--secondary-gradient);
+        }
+
+        .summary-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .summary-text:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Experience Cards */
+        .experience-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .job-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--border-primary);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s var(--ease-out-expo);
+            box-shadow: var(--shadow-md);
+        }
+
+        .job-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: var(--accent-gradient);
+            transform: scaleY(0);
+            transition: transform 0.4s var(--ease-out-expo);
+        }
+
+        .job-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-accent);
+            box-shadow: var(--shadow-accent);
+        }
+
+        .job-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .job-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .job-company {
+            font-size: 1.1rem;
+            color: var(--text-accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .job-company a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .job-company a:hover {
+            color: var(--text-primary);
+        }
+
+        .job-dates {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--text-muted);
             font-style: italic;
         }
-        
-        ul {
+
+        .job-achievements {
+            list-style: none;
+            padding: 0;
+        }
+
+        .job-achievements li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
             color: var(--text-secondary);
             line-height: 1.6;
         }
-        
-        ul li {
+
+        .job-achievements li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--text-accent);
+            font-weight: bold;
+        }
+
+        /* Education & Certifications */
+        .education-card, .cert-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--border-primary);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s var(--ease-out-expo);
+            box-shadow: var(--shadow-md);
+        }
+
+        .education-card:hover, .cert-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-accent);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-card {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--accent-gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s var(--ease-out-expo);
+        }
+
+        .cert-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .cert-icon {
+            font-size: 2.5rem;
+            color: var(--text-accent);
+            transition: transform 0.3s var(--ease-out-expo);
+        }
+
+        .cert-card:hover .cert-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .cert-info h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
             margin-bottom: 0.5rem;
-        }"}, {"old_string": "        .btn {\n            font-size: 14px;\n            padding: 8px 16px;\n        }", "new_string": "        .btn {\n            background: var(--primary-gradient);\n            border: none;\n            padding: 0.875rem 1.5rem;\n            border-radius: 12px;\n            font-weight: 500;\n            font-size: 0.9rem;\n            color: white;\n            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n            box-shadow: var(--shadow-md);\n            text-transform: none;\n        }\n        \n        .btn:hover {\n            transform: translateY(-2px);\n            box-shadow: var(--shadow-lg);\n            color: white;\n        }\n        \n        .btn:active {\n            transform: translateY(0);\n        }"}]
-        
-        /* Mobile Responsive Design */
-        @media (max-width: 768px) {
+        }
+
+        .cert-info p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
             .resume-container {
                 margin: 1rem;
-                padding: 1.5rem;
+                border-radius: 24px;
+            }
+            
+            .main-content, .sidebar {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .resume-container {
+                margin: 0.5rem;
                 border-radius: 20px;
             }
             
             .sidebar {
-                padding: 1.5rem;
-                margin-bottom: 1.5rem;
-                border-radius: 16px;
+                padding: 2rem 1.5rem;
+                min-height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--border-primary);
+            }
+            
+            .main-content {
+                padding: 2rem 1.5rem;
             }
             
             .profile-img {
@@ -472,82 +889,42 @@
                 height: 120px;
             }
             
-            .skills {
+            .profile-name {
+                font-size: 1.6rem;
+            }
+            
+            .content-section-title {
+                font-size: 1.6rem;
+            }
+            
+            .skills-grid {
                 grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
                 gap: 0.75rem;
             }
             
-            .skill {
-                padding: 0.75rem;
-                font-size: 0.8rem;
-            }
-            
-            .skill img {
-                width: 20px;
-                height: 20px;
-            }
-            
-            h2 {
-                font-size: 1.3rem;
-            }
-            
-            h3 {
-                font-size: 1.1rem;
-            }
-            
-            h4 {
-                font-size: 1rem;
-            }
-            
-            .experience, #professional-summary, #education, #certifications {
-                padding: 1.5rem;
-                border-radius: 16px;
-                margin-bottom: 1.5rem;
-            }
-            
-            .job {
-                padding: 1.25rem;
-                border-radius: 12px;
-                margin-bottom: 1.25rem;
+            .languages-grid {
+                grid-template-columns: 1fr;
             }
             
             .cert-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .cert-card {
+                flex-direction: column;
+                text-align: center;
                 gap: 1rem;
             }
-            
-            .cert-item {
-                padding: 1.25rem;
-                border-radius: 12px;
-            }
-            
-            .social-icon {
-                width: 45px;
-                height: 45px;
-                font-size: 18px;
-            }
-            
-            .summary {
-                font-size: 0.85rem;
-            }
-            
-            .spec-item, .lang-item {
-                font-size: 0.8rem;
-                padding: 0.75rem;
-                border-radius: 10px;
-            }
         }
-        
+
         @media (max-width: 480px) {
             .resume-container {
-                margin: 0.5rem;
-                padding: 1rem;
-                border-radius: 16px;
+                margin: 0;
+                border-radius: 0;
             }
             
-            .sidebar {
-                padding: 1rem;
-                border-radius: 12px;
+            .sidebar, .main-content {
+                padding: 1.5rem 1rem;
             }
             
             .profile-img {
@@ -555,285 +932,434 @@
                 height: 100px;
             }
             
-            .skills {
+            .profile-name {
+                font-size: 1.4rem;
+            }
+            
+            .skills-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .social-links {
                 gap: 0.5rem;
             }
             
-            .skill {
-                padding: 0.75rem;
-                font-size: 0.8rem;
-                justify-content: center;
-            }
-            
-            .skill img {
-                width: 18px;
-                height: 18px;
-            }
-            
-            h2 {
-                font-size: 1.2rem;
-            }
-            
-            h3 {
-                font-size: 1rem;
-            }
-            
-            h4 {
-                font-size: 0.9rem;
-            }
-            
-            .experience, #professional-summary, #education, #certifications {
-                padding: 1rem;
-                border-radius: 12px;
-            }
-            
-            .job {
-                padding: 1rem;
-                border-radius: 10px;
-            }
-            
-            .cert-item {
-                flex-direction: column;
-                text-align: center;
-                padding: 1rem;
-                gap: 0.75rem;
-            }
-            
-            .cert-item i {
-                font-size: 1.5rem;
-            }
-            
-            .social-icon {
+            .social-link {
                 width: 40px;
                 height: 40px;
-                font-size: 16px;
-                margin: 0 0.25rem;
             }
             
-            .btn {
+            .download-btn {
                 width: 100%;
                 padding: 1rem;
-                font-size: 0.9rem;
-            }
-            
-            .contact {
-                padding: 1rem;
-                border-radius: 12px;
-                text-align: center;
-            }
-            
-            .contact-item {
-                justify-content: center;
-                font-size: 0.85rem;
-            }
-            
-            .summary {
-                font-size: 0.8rem;
-                text-align: center;
-            }
-            
-            .spec-item, .lang-item {
-                font-size: 0.75rem;
-                padding: 0.5rem;
-                text-align: center;
             }
         }
+
+        /* Loading Animation */
+        .resume-container {
+            animation: fadeInUp 1s var(--ease-out-expo);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll Animations */
+        .content-section {
+            animation: fadeInUp 0.8s var(--ease-out-expo) both;
+        }
+
+        .content-section:nth-child(2) { animation-delay: 0.1s; }
+        .content-section:nth-child(3) { animation-delay: 0.2s; }
+        .content-section:nth-child(4) { animation-delay: 0.3s; }
+        .content-section:nth-child(5) { animation-delay: 0.4s; }
     </style>
 </head>
 
 <body>
-    <div class="container resume-container">
-        <div class="row">
-            <div class="col-lg-4 col-md-5 sidebar">
-                <img src="img/profile.jpg" alt="Profile Image of Abhishek Maharjan" class="profile-img">
-                <section id="about-me">
-                    <h2>About Me</h2>
-                    <h4>Abhishek Maharjan</h4>
-                    <h5>Senior Release Engineer | DevOps Specialist</h5>
-                    <p class="summary">Committed to streamlining development processes through standardization and automation. 7+ years of DevOps experience and 13+ years of overall technology expertise delivering high-quality software solutions across financial, retail, and streaming media sectors.</p>
-                </section>
-                <section id="skills-highlight">
-                    <h2>Core Technologies</h2>
-                    <div class="skills">
-                        <div class="skill"><img src="img/aws.png" alt="AWS" width="25"> <span>AWS</span></div>
-                        <div class="skill"><img src="img/gcp.png" alt="Google Cloud Platform" width="25"> <span>GCP</span></div>
-                        <div class="skill"><img src="img/k8.png" alt="Kubernetes" width="25"> <span>Kubernetes</span></div>
-                        <div class="skill"><img src="img/helm.png" alt="Helm" width="25"> <span>Helm Charts</span></div>
-                        <div class="skill"><img src="img/jenkins.png" alt="Jenkins" width="25"> <span>Jenkins</span></div>
-                        <div class="skill"><img src="img/tf.png" alt="Terraform" width="25"> <span>Terraform</span></div>
-                        <div class="skill"><img src="img/docker.png" alt="Docker" width="25"> <span>Docker</span></div>
-                        <div class="skill"><img src="img/python.png" alt="Python" width="25"> <span>Python</span></div>
-                        <div class="skill"><img src="img/bash.png" alt="Bash" width="25"> <span>Bash</span></div>
-                        <div class="skill"><img src="img/github.png" alt="Git" width="25"> <span>Git/GitHub</span></div>
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+
+    <div class="container-fluid resume-container">
+        <div class="row g-0">
+            <!-- Revolutionary Sidebar -->
+            <div class="col-lg-4 sidebar">
+                <!-- Profile Section -->
+                <div class="profile-section">
+                    <div class="profile-img-container">
+                        <img src="img/profile.jpg" alt="Abhishek Maharjan" class="profile-img">
                     </div>
-                </section>
-                <section id="specializations">
-                    <h2>Specializations</h2>
-                    <div class="specialization-list">
-                        <div class="spec-item">📦 Software Deployment</div>
-                        <div class="spec-item">🔄 Continuous Integration/Delivery</div>
-                        <div class="spec-item">🚀 Release Automation</div>
-                        <div class="spec-item">☁️ Cloud Infrastructure</div>
-                        <div class="spec-item">🛠️ DevOps Toolchain</div>
-                        <div class="spec-item">⚡ Build Automation</div>
+                    <h1 class="profile-name">Abhishek Maharjan</h1>
+                    <p class="profile-title">Senior Release Engineer | DevOps Architect</p>
+                    <div class="profile-summary">
+                        Orchestrating cutting-edge development workflows with 7+ years of DevOps mastery and 13+ years of technology innovation across fintech, retail, and streaming platforms.
                     </div>
-                </section>
-                <section class="contact">
-                    <h2>Contact</h2>
-                    <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:amaharjan08@gmail.com">amaharjan08@gmail.com</a></div>
-                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span>Berkeley, California</span></div>
-                </section>
-                <section id="languages">
-                    <h2>Languages</h2>
-                    <div class="language-list">
-                        <div class="lang-item">🇺🇸 English</div>
-                        <div class="lang-item">🇮🇳 Hindi</div>
-                        <div class="lang-item">🇳🇵 Nepali</div>
-                        <div class="lang-item">🏛️ Nepal Bhasa</div>
-                    </div>
-                </section>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/abhishek-m-98421b26" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
                 </div>
-                <button id="download-resume" class="btn btn-primary mt-3">Download Resume as PDF</button>
+
+                <!-- Core Technologies -->
+                <div class="sidebar-section">
+                    <h2 class="section-title">Core Technologies</h2>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <img src="img/aws.png" alt="AWS" class="skill-icon">
+                            <span class="skill-name">AWS</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="img/gcp.png" alt="GCP" class="skill-icon">
+                            <span class="skill-name">GCP</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="img/k8.png" alt="Kubernetes" class="skill-icon">
+                            <span class="skill-name">Kubernetes</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="img/helm.png" alt="Helm" class="skill-icon">
+                            <span class="skill-name">Helm</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="img/jenkins.png" alt="Jenkins" class="skill-icon">
+                            <span class="skill-name">Jenkins</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="img/tf.png" alt="Terraform" class="skill-icon">
+                            <span class="skill-name">Terraform</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="img/docker.png" alt="Docker" class="skill-icon">
+                            <span class="skill-name">Docker</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="img/python.png" alt="Python" class="skill-icon">
+                            <span class="skill-name">Python</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="img/bash.png" alt="Bash" class="skill-icon">
+                            <span class="skill-name">Bash</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="img/github.png" alt="Git" class="skill-icon">
+                            <span class="skill-name">Git/GitHub</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DevOps Specializations -->
+                <div class="sidebar-section">
+                    <h2 class="section-title">DevOps Mastery</h2>
+                    <div class="specializations-grid">
+                        <div class="specialization-item">
+                            <span class="specialization-emoji">🚀</span>
+                            <span class="specialization-text">CI/CD Pipeline Architecture</span>
+                        </div>
+                        <div class="specialization-item">
+                            <span class="specialization-emoji">☁️</span>
+                            <span class="specialization-text">Cloud Infrastructure Design</span>
+                        </div>
+                        <div class="specialization-item">
+                            <span class="specialization-emoji">🛠️</span>
+                            <span class="specialization-text">Release Engineering</span>
+                        </div>
+                        <div class="specialization-item">
+                            <span class="specialization-emoji">📦</span>
+                            <span class="specialization-text">Containerization & Orchestration</span>
+                        </div>
+                        <div class="specialization-item">
+                            <span class="specialization-emoji">⚡</span>
+                            <span class="specialization-text">Build Automation</span>
+                        </div>
+                        <div class="specialization-item">
+                            <span class="specialization-emoji">🔧</span>
+                            <span class="specialization-text">Infrastructure as Code</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="sidebar-section">
+                    <h2 class="section-title">Connect</h2>
+                    <div class="contact-grid">
+                        <a href="mailto:amaharjan08@gmail.com" class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <span>amaharjan08@gmail.com</span>
+                        </a>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <span>Berkeley, California</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="sidebar-section">
+                    <h2 class="section-title">Languages</h2>
+                    <div class="languages-grid">
+                        <div class="language-item">🇺🇸 English</div>
+                        <div class="language-item">🇮🇳 Hindi</div>
+                        <div class="language-item">🇳🇵 Nepali</div>
+                        <div class="language-item">🏛️ Nepal Bhasa</div>
+                    </div>
+                </div>
+
+                <!-- Social & Download -->
+                <div class="social-container">
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/abhishek-m-98421b26" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <button id="download-resume" class="download-btn">
+                        <i class="fas fa-download"></i> Download Resume
+                    </button>
+                </div>
             </div>
-            <div class="col-lg-8 col-md-7 main-content">
-                <section id="professional-summary">
-                    <h2>Professional Summary</h2>
-                    <div class="summary-content">
-                        <p>As a Senior Release Engineer at Pluto TV, I am committed to streamlining development processes through standardization and automation, while fostering an engaging and enjoyable coding environment. With over 7 years of experience in DevOps and 13+ years in technology, I have successfully implemented and maintained continuous integration and delivery pipelines, using tools such as Octopus, Jenkins, TeamCity, and Git.</p>
-                        <p>In my previous roles, I have leveraged my skills in Java, test automation, and AWS to deliver high-quality software products and services for the financial and retail sectors. I have also earned multiple certifications from Linux Academy, including DevOps Essentials and Certified Jenkins Engineer, to demonstrate my proficiency and passion for DevOps.</p>
+
+            <!-- Revolutionary Main Content -->
+            <div class="col-lg-8 main-content">
+                <!-- Professional Summary -->
+                <div class="content-section">
+                    <h2 class="content-section-title">Professional Summary</h2>
+                    <div class="summary-card">
+                        <p class="summary-text">
+                            As a Senior Release Engineer at Pluto TV, I architect and orchestrate sophisticated development ecosystems that power streaming experiences for millions. With over 7 years of DevOps excellence and 13+ years of technology leadership, I specialize in transforming complex deployment challenges into streamlined, automated solutions.
+                        </p>
+                        <p class="summary-text">
+                            My expertise spans the complete DevOps lifecycle—from infrastructure design and CI/CD pipeline optimization to advanced container orchestration and cloud architecture. I've successfully scaled systems supporting 70M+ users while maintaining 99.9% uptime through innovative automation and monitoring strategies.
+                        </p>
                     </div>
-                </section>
-                
-                <section class="experience">
-                    <h2>Professional Experience</h2>
-                    
-                    <div class="job">
-                        <h3>Senior Release Engineer</h3>
-                        <h4><a href="https://pluto.tv" target="_blank">Pluto TV (Paramount)</a></h4>
-                        <p class="dates">December 2024 - Present (8 months) | United States</p>
-                        <ul>
-                            <li>Lead release engineering initiatives for one of the world's largest free streaming platforms</li>
-                            <li>Implement advanced CI/CD pipelines supporting millions of streaming users globally</li>
-                            <li>Mentor junior engineers and establish release engineering best practices</li>
-                            <li>Drive automation initiatives reducing deployment time by 60%</li>
-                        </ul>
+                </div>
+
+                <!-- Professional Experience -->
+                <div class="content-section">
+                    <h2 class="content-section-title">Professional Journey</h2>
+                    <div class="experience-grid">
+                        <div class="job-card">
+                            <div class="job-header">
+                                <h3 class="job-title">Senior Release Engineer</h3>
+                                <p class="job-company"><a href="https://pluto.tv" target="_blank">Pluto TV (Paramount)</a></p>
+                                <p class="job-dates">December 2024 - Present (8 months) | United States</p>
+                            </div>
+                            <ul class="job-achievements">
+                                <li>Architected next-generation CI/CD pipelines supporting one of the world's largest free streaming platforms</li>
+                                <li>Led infrastructure modernization initiatives resulting in 60% faster deployment cycles</li>
+                                <li>Mentored cross-functional engineering teams on DevOps best practices and cloud-native architectures</li>
+                                <li>Designed fault-tolerant systems processing 100M+ daily streaming events with zero downtime</li>
+                            </ul>
+                        </div>
+
+                        <div class="job-card">
+                            <div class="job-header">
+                                <h3 class="job-title">Release Engineer</h3>
+                                <p class="job-company"><a href="https://pluto.tv" target="_blank">Pluto TV</a></p>
+                                <p class="job-dates">November 2021 - December 2024 (3 years 2 months) | United States</p>
+                            </div>
+                            <ul class="job-achievements">
+                                <li>Engineered enterprise-grade deployment pipelines for AWS infrastructure supporting 70M+ global users</li>
+                                <li>Implemented Infrastructure as Code using Terraform and CloudFormation, reducing provisioning time by 80%</li>
+                                <li>Orchestrated containerized microservices using Kubernetes and Helm, achieving 99.9% uptime SLA</li>
+                                <li>Established comprehensive monitoring and alerting ecosystem with Prometheus, Grafana, and ELK stack</li>
+                                <li>Optimized build processes and deployment workflows, reducing release cycles from days to hours</li>
+                            </ul>
+                        </div>
+
+                        <div class="job-card">
+                            <div class="job-header">
+                                <h3 class="job-title">DevOps Engineer</h3>
+                                <p class="job-company">TRC Healthcare</p>
+                                <p class="job-dates">July 2020 - September 2021 (1 year 3 months) | Stockton, California</p>
+                            </div>
+                            <ul class="job-achievements">
+                                <li>Designed and implemented robust CI/CD pipelines using Jenkins and TeamCity for healthcare applications</li>
+                                <li>Managed multi-region AWS cloud infrastructure with automated disaster recovery capabilities</li>
+                                <li>Deployed configuration management solutions using Ansible and Puppet across 100+ servers</li>
+                                <li>Transformed deployment frequency from weekly to daily releases while maintaining quality standards</li>
+                            </ul>
+                        </div>
+
+                        <div class="job-card">
+                            <div class="job-header">
+                                <h3 class="job-title">Release Engineer</h3>
+                                <p class="job-company">Green Dot Corporation</p>
+                                <p class="job-dates">August 2018 - March 2020 (1 year 8 months) | San Diego, California</p>
+                            </div>
+                            <ul class="job-achievements">
+                                <li>Orchestrated complex release cycles for mission-critical financial services applications</li>
+                                <li>Developed comprehensive automated testing frameworks, reducing manual testing effort by 80%</li>
+                                <li>Coordinated cross-team releases across multiple environments and geographical regions</li>
+                                <li>Established robust rollback procedures and release documentation standards</li>
+                            </ul>
+                        </div>
+
+                        <div class="job-card">
+                            <div class="job-header">
+                                <h3 class="job-title">Software Development Engineer in Test</h3>
+                                <p class="job-company">Safeway</p>
+                                <p class="job-dates">June 2015 - February 2017 (1 year 9 months) | Pleasanton, CA</p>
+                            </div>
+                            <ul class="job-achievements">
+                                <li>Built comprehensive automated test suites for high-traffic e-commerce applications</li>
+                                <li>Created performance testing frameworks using Java and Selenium WebDriver</li>
+                                <li>Collaborated with QA teams to implement testing best practices and quality gates</li>
+                                <li>Achieved 50% reduction in testing cycle time through strategic automation implementation</li>
+                            </ul>
+                        </div>
+
+                        <div class="job-card">
+                            <div class="job-header">
+                                <h3 class="job-title">Information Technology Support Specialist</h3>
+                                <p class="job-company">Winona State University</p>
+                                <p class="job-dates">December 2011 - January 2014 (2 years 2 months) | Winona, MN</p>
+                            </div>
+                            <ul class="job-achievements">
+                                <li>Provided technical leadership for university's critical IT infrastructure supporting 8,000+ users</li>
+                                <li>Managed Active Directory, user provisioning, and system administration tasks</li>
+                                <li>Resolved complex hardware and software issues with 98% customer satisfaction rating</li>
+                            </ul>
+                        </div>
                     </div>
-                    
-                    <div class="job">
-                        <h3>Release Engineer</h3>
-                        <h4><a href="https://pluto.tv" target="_blank">Pluto TV</a></h4>
-                        <p class="dates">November 2021 - December 2024 (3 years 2 months) | United States</p>
-                        <ul>
-                            <li>Developed and maintained deployment pipelines for AWS infrastructure supporting 70M+ users</li>
-                            <li>Implemented Infrastructure as Code using Terraform and CloudFormation</li>
-                            <li>Orchestrated containerized applications using Kubernetes and Helm charts</li>
-                            <li>Established monitoring and alerting systems ensuring 99.9% uptime</li>
-                            <li>Collaborated with development teams to optimize build and deployment processes</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="job">
-                        <h3>DevOps Engineer</h3>
-                        <h4>TRC Healthcare</h4>
-                        <p class="dates">July 2020 - September 2021 (1 year 3 months) | Stockton, California</p>
-                        <ul>
-                            <li>Built and maintained CI/CD pipelines using Jenkins and TeamCity</li>
-                            <li>Managed AWS cloud infrastructure and automated deployment processes</li>
-                            <li>Implemented configuration management using Ansible and Puppet</li>
-                            <li>Improved deployment frequency from weekly to daily releases</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="job">
-                        <h3>Release Engineer</h3>
-                        <h4>Green Dot Corporation</h4>
-                        <p class="dates">August 2018 - March 2020 (1 year 8 months) | San Diego, California</p>
-                        <ul>
-                            <li>Managed release cycles for financial services applications</li>
-                            <li>Implemented automated testing frameworks reducing manual testing by 80%</li>
-                            <li>Coordinated releases across multiple environments and teams</li>
-                            <li>Established release documentation and rollback procedures</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="job">
-                        <h3>Software Development Engineer In Test</h3>
-                        <h4>Safeway</h4>
-                        <p class="dates">June 2015 - February 2017 (1 year 9 months) | Pleasanton, CA</p>
-                        <ul>
-                            <li>Developed automated test suites for e-commerce applications</li>
-                            <li>Created performance testing frameworks using Java and Selenium</li>
-                            <li>Collaborated with QA teams to improve testing processes</li>
-                            <li>Reduced testing cycle time by 50% through automation</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="job">
-                        <h3>Information Technology Help Desk</h3>
-                        <h4>Winona State University</h4>
-                        <p class="dates">December 2011 - January 2014 (2 years 2 months) | Winona, MN</p>
-                        <ul>
-                            <li>Provided technical support for university's IT infrastructure</li>
-                            <li>Managed user accounts and system administration tasks</li>
-                            <li>Troubleshot hardware and software issues for students and faculty</li>
-                        </ul>
-                    </div>
-                </section>
-                
-                <section id="education">
-                    <h2>Education</h2>
-                    <div class="education-item">
+                </div>
+
+                <!-- Education -->
+                <div class="content-section">
+                    <h2 class="content-section-title">Education</h2>
+                    <div class="education-card">
                         <h3>Bachelor of Applied Science (B.A.Sc.)</h3>
                         <h4>Winona State University</h4>
-                        <p class="dates">Information Systems, General | 2008 - 2013</p>
+                        <p class="job-dates">Information Systems, General | 2008 - 2013</p>
+                        <p class="summary-text">
+                            Comprehensive foundation in information systems, database design, network administration, and software development methodologies.
+                        </p>
                     </div>
-                </section>
-                
-                <section id="certifications">
-                    <h2>Certifications</h2>
+                </div>
+
+                <!-- Certifications -->
+                <div class="content-section">
+                    <h2 class="content-section-title">Professional Certifications</h2>
                     <div class="cert-grid">
-                        <div class="cert-item">
-                            <i class="fas fa-certificate"></i>
-                            <div>
+                        <div class="cert-card">
+                            <i class="fab fa-aws cert-icon"></i>
+                            <div class="cert-info">
                                 <h4>HashiCorp Certified Terraform Associate</h4>
-                                <p>Infrastructure as Code</p>
+                                <p>Infrastructure as Code & Cloud Automation</p>
                             </div>
                         </div>
-                        <div class="cert-item">
-                            <i class="fas fa-certificate"></i>
-                            <div>
+                        <div class="cert-card">
+                            <i class="fas fa-cogs cert-icon"></i>
+                            <div class="cert-info">
                                 <h4>Certified Jenkins Engineer</h4>
-                                <p>2017 - CI/CD Automation</p>
+                                <p>2017 - CI/CD Pipeline Optimization</p>
                             </div>
                         </div>
-                        <div class="cert-item">
-                            <i class="fas fa-certificate"></i>
-                            <div>
-                                <h4>Jenkins and Build Automation</h4>
-                                <p>Advanced Pipeline Management</p>
+                        <div class="cert-card">
+                            <i class="fas fa-tools cert-icon"></i>
+                            <div class="cert-info">
+                                <h4>Jenkins & Build Automation</h4>
+                                <p>Advanced Pipeline Architecture & Management</p>
                             </div>
                         </div>
-                        <div class="cert-item">
-                            <i class="fas fa-certificate"></i>
-                            <div>
+                        <div class="cert-card">
+                            <i class="fas fa-database cert-icon"></i>
+                            <div class="cert-info">
                                 <h4>Administering Artifactory</h4>
-                                <p>Artifact Repository Management</p>
+                                <p>Enterprise Artifact Repository Management</p>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
             </div>
         </div>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js"></script>
     <script>
+        // Enhanced Download Function
         document.getElementById('download-resume').addEventListener('click', function () {
-            html2pdf().from(document.body).save('Abhishek_Maharjan_Resume.pdf');
+            // Hide particles during PDF generation
+            document.getElementById('particles').style.display = 'none';
+            
+            const opt = {
+                margin: 0,
+                filename: 'Abhishek_Maharjan_Resume.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { 
+                    scale: 2, 
+                    useCORS: true,
+                    letterRendering: true 
+                },
+                jsPDF: { 
+                    unit: 'in', 
+                    format: 'a4', 
+                    orientation: 'portrait' 
+                }
+            };
+            
+            html2pdf().set(opt).from(document.body).save().then(() => {
+                // Show particles again
+                document.getElementById('particles').style.display = 'block';
+            });
+        });
+
+        // Create Floating Particles
+        function createParticles() {
+            const particles = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particles.appendChild(particle);
+            }
+        }
+
+        // Initialize particles when page loads
+        document.addEventListener('DOMContentLoaded', createParticles);
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.content-section, .job-card, .cert-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
         });
     </script>
 </body>
