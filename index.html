@@ -380,6 +380,9 @@
             height: 32px;
             border-radius: 8px;
             transition: transform 0.3s var(--ease-out-expo);
+            object-fit: contain;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px;
         }
 
         .skill-card:hover .skill-icon {
@@ -804,6 +807,34 @@
             transition: all 0.3s var(--ease-out-expo);
             box-shadow: var(--shadow-md);
         }
+        
+        .education-card h3 {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .education-card h4 {
+            color: var(--text-accent);
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+        
+        .education-card .job-dates {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .education-card .summary-text {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
+        }
 
         .education-card:hover, .cert-card:hover {
             transform: translateY(-4px);
@@ -1062,19 +1093,19 @@
                             <span class="skill-name">Groovy</span>
                         </div>
                         <div class="skill-card">
-                            <img src="https://imgix.datadoghq.com/img/about/presskit/logo-v/dd_vertical_purple.png" alt="Datadog" class="skill-icon">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #632ca6 0%, #9a4bff 100%); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.7rem;">DD</div>
                             <span class="skill-name">Datadog</span>
                         </div>
                         <div class="skill-card">
-                            <img src="https://newrelic.com/assets/newrelic/source/NewRelic-logo-square.svg" alt="New Relic" class="skill-icon">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #1ce783 0%, #1d9656 100%); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.7rem;">NR</div>
                             <span class="skill-name">New Relic</span>
                         </div>
                         <div class="skill-card">
-                            <img src="https://raw.githubusercontent.com/grafana/grafana/main/public/img/grafana_icon.svg" alt="Grafana" class="skill-icon">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #f46800 0%, #ff8c00 100%); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.7rem;">GF</div>
                             <span class="skill-name">Grafana</span>
                         </div>
                         <div class="skill-card">
-                            <img src="https://raw.githubusercontent.com/prometheus/prometheus/main/web/ui/static/img/prometheus_logo.svg" alt="Prometheus" class="skill-icon">
+                            <div class="skill-icon" style="background: linear-gradient(135deg, #e6522c 0%, #ff6f47 100%); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.7rem;">PM</div>
                             <span class="skill-name">Prometheus</span>
                         </div>
                     </div>
