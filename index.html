@@ -1005,6 +1005,34 @@
             animation: fadeInUp 1s var(--ease-out-expo);
         }
 
+        /* PDF-specific styles */
+        @media print {
+            .particles {
+                display: none !important;
+            }
+            
+            body::after {
+                display: none !important;
+            }
+            
+            .resume-container {
+                margin: 0 !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                background: white !important;
+            }
+            
+            .skill-card, .job-card, .cert-card, .education-card {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            
+            .content-section {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -1403,31 +1431,82 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js"></script>
     <script>
-        // Enhanced Download Function
+        // Enhanced Download Function with Complete Content Capture
         document.getElementById('download-resume').addEventListener('click', function () {
-            // Hide particles during PDF generation
+            // Show loading state
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
+            this.disabled = true;
+            
+            // Hide particles and floating elements during PDF generation
             document.getElementById('particles').style.display = 'none';
             
-            const opt = {
-                margin: 0,
-                filename: 'Abhishek_Maharjan_Resume.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { 
-                    scale: 2, 
-                    useCORS: true,
-                    letterRendering: true 
-                },
-                jsPDF: { 
-                    unit: 'in', 
-                    format: 'a4', 
-                    orientation: 'portrait' 
-                }
-            };
+            // Temporarily remove interactive elements that might interfere with PDF generation
+            const originalScrollBehavior = document.documentElement.style.scrollBehavior;
+            document.documentElement.style.scrollBehavior = 'auto';
             
-            html2pdf().set(opt).from(document.body).save().then(() => {
-                // Show particles again
-                document.getElementById('particles').style.display = 'block';
-            });
+            // Scroll to top to ensure complete capture
+            window.scrollTo(0, 0);
+            
+            // Wait a moment for rendering
+            setTimeout(() => {
+                const resumeContainer = document.querySelector('.resume-container');
+                
+                const opt = {
+                    margin: [0.5, 0.5, 0.5, 0.5],
+                    filename: 'Abhishek_Maharjan_Resume.pdf',
+                    image: { 
+                        type: 'jpeg', 
+                        quality: 0.98,
+                        crossOrigin: 'anonymous'
+                    },
+                    html2canvas: { 
+                        scale: 2,
+                        useCORS: true,
+                        allowTaint: true,
+                        letterRendering: true,
+                        logging: false,
+                        width: resumeContainer.scrollWidth,
+                        height: resumeContainer.scrollHeight,
+                        scrollX: 0,
+                        scrollY: 0,
+                        backgroundColor: '#0a0a0a'
+                    },
+                    jsPDF: { 
+                        unit: 'in', 
+                        format: 'a4', 
+                        orientation: 'portrait',
+                        compress: true
+                    },
+                    pagebreak: { 
+                        mode: ['avoid-all', 'css', 'legacy'],
+                        before: '.content-section'
+                    }
+                };
+                
+                html2pdf().set(opt).from(resumeContainer).save().then(() => {
+                    // Restore elements and reset button
+                    document.getElementById('particles').style.display = 'block';
+                    document.documentElement.style.scrollBehavior = originalScrollBehavior;
+                    
+                    const downloadBtn = document.getElementById('download-resume');
+                    downloadBtn.innerHTML = '<i class="fas fa-download"></i> Download Resume';
+                    downloadBtn.disabled = false;
+                }).catch((error) => {
+                    console.error('PDF generation failed:', error);
+                    // Restore elements and reset button even on error
+                    document.getElementById('particles').style.display = 'block';
+                    document.documentElement.style.scrollBehavior = originalScrollBehavior;
+                    
+                    const downloadBtn = document.getElementById('download-resume');
+                    downloadBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Try Again';
+                    downloadBtn.disabled = false;
+                    
+                    // Reset to normal state after 3 seconds
+                    setTimeout(() => {
+                        downloadBtn.innerHTML = '<i class="fas fa-download"></i> Download Resume';
+                    }, 3000);
+                });
+            }, 500);
         });
 
         // Create Floating Particles
