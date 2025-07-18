@@ -96,11 +96,14 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(240, 147, 251, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(79, 172, 254, 0.05) 0%, transparent 50%);
+                radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(240, 147, 251, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(79, 172, 254, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 60% 70%, rgba(245, 87, 108, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 10% 30%, rgba(84, 160, 255, 0.06) 0%, transparent 45%),
+                radial-gradient(circle at 90% 60%, rgba(118, 75, 162, 0.1) 0%, transparent 35%);
             z-index: -2;
-            animation: backgroundShift 20s ease-in-out infinite;
+            animation: backgroundShift 25s ease-in-out infinite;
         }
 
         @keyframes backgroundShift {
@@ -350,6 +353,8 @@
             transition: all 0.4s var(--ease-out-expo);
             position: relative;
             overflow: hidden;
+            text-decoration: none;
+            color: inherit;
         }
 
         .skill-card::before {
@@ -1044,70 +1049,118 @@
                     </div>
                 </div>
 
+                <!-- Contact Information -->
+                <div class="sidebar-section">
+                    <h2 class="section-title">Connect</h2>
+                    <div class="contact-grid">
+                        <a href="mailto:amaharjan08@gmail.com" class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <span>amaharjan08@gmail.com</span>
+                        </a>
+                        <a href="tel:+15108595266" class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <span>(510) 859-5266</span>
+                        </a>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <span>Berkeley, California</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Download Resume Button -->
+                <div class="sidebar-section">
+                    <div class="social-container">
+                        <button id="download-resume" class="download-btn">
+                            <i class="fas fa-download"></i> Download Resume
+                        </button>
+                    </div>
+                </div>
+
                 <!-- Core Technologies -->
                 <div class="sidebar-section">
                     <h2 class="section-title">Core Technologies</h2>
                     <div class="skills-grid">
-                        <div class="skill-card">
+                        <a href="https://docs.aws.amazon.com/" target="_blank" class="skill-card">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" class="skill-icon">
                             <span class="skill-name">AWS</span>
-                        </div>
-                        <div class="skill-card">
+                        </a>
+                        <a href="https://cloud.google.com/docs" target="_blank" class="skill-card">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Google-cloud-platform.svg" alt="GCP" class="skill-icon">
                             <span class="skill-name">GCP</span>
-                        </div>
-                        <div class="skill-card">
+                        </a>
+                        <a href="https://kubernetes.io/docs/" target="_blank" class="skill-card">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg" alt="Kubernetes" class="skill-icon">
                             <span class="skill-name">Kubernetes</span>
-                        </div>
-                        <div class="skill-card">
+                        </a>
+                        <a href="https://helm.sh/docs/" target="_blank" class="skill-card">
                             <img src="https://helm.sh/img/helm.svg" alt="Helm" class="skill-icon">
                             <span class="skill-name">Helm</span>
-                        </div>
-                        <div class="skill-card">
+                        </a>
+                        <a href="https://www.jenkins.io/doc/" target="_blank" class="skill-card">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Jenkins_logo.svg" alt="Jenkins" class="skill-icon">
                             <span class="skill-name">Jenkins</span>
-                        </div>
-                        <div class="skill-card">
+                        </a>
+                        <a href="https://developer.hashicorp.com/terraform/docs" target="_blank" class="skill-card">
                             <img src="https://www.datocms-assets.com/2885/1629941242-logo-terraform-main.svg" alt="Terraform" class="skill-icon">
                             <span class="skill-name">Terraform</span>
-                        </div>
-                        <div class="skill-card">
+                        </a>
+                        <a href="https://docs.docker.com/" target="_blank" class="skill-card">
                             <img src="https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png" alt="Docker" class="skill-icon">
                             <span class="skill-name">Docker</span>
-                        </div>
-                        <div class="skill-card">
+                        </a>
+                        <a href="https://docs.python.org/" target="_blank" class="skill-card">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" class="skill-icon">
                             <span class="skill-name">Python</span>
-                        </div>
-                        <div class="skill-card">
+                        </a>
+                        <a href="https://www.gnu.org/software/bash/manual/" target="_blank" class="skill-card">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Bash_Logo_Colored.svg" alt="Bash" class="skill-icon">
                             <span class="skill-name">Bash</span>
-                        </div>
-                        <div class="skill-card">
+                        </a>
+                        <a href="https://git-scm.com/doc" target="_blank" class="skill-card">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg" alt="Git" class="skill-icon">
                             <span class="skill-name">Git/GitHub</span>
-                        </div>
-                        <div class="skill-card">
+                        </a>
+                        <a href="https://docs.groovy-lang.org/" target="_blank" class="skill-card">
                             <img src="https://groovy-lang.org/img/groovy-logo.png" alt="Groovy" class="skill-icon">
                             <span class="skill-name">Groovy</span>
-                        </div>
-                        <div class="skill-card">
+                        </a>
+                        <a href="https://docs.datadoghq.com/" target="_blank" class="skill-card">
                             <img src="https://imgix.datadoghq.com/img/dd_logo_70x75.png" alt="Datadog" class="skill-icon">
                             <span class="skill-name">Datadog</span>
-                        </div>
-                        <div class="skill-card">
+                        </a>
+                        <a href="https://docs.newrelic.com/" target="_blank" class="skill-card">
                             <img src="https://newrelic.com/themes/custom/erno/assets/mediakit/new_relic_logo_vertical.svg" alt="New Relic" class="skill-icon">
                             <span class="skill-name">New Relic</span>
-                        </div>
-                        <div class="skill-card">
-                            <img src="https://grafana.com/static/img/logos/grafana_logo.svg" alt="Grafana" class="skill-icon">
+                        </a>
+                        <a href="https://grafana.com/docs/" target="_blank" class="skill-card">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Grafana_icon.svg" alt="Grafana" class="skill-icon">
                             <span class="skill-name">Grafana</span>
-                        </div>
-                        <div class="skill-card">
-                            <img src="https://prometheus.io/assets/prometheus_logo_grey.svg" alt="Prometheus" class="skill-icon">
+                        </a>
+                        <a href="https://prometheus.io/docs/" target="_blank" class="skill-card">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Prometheus_software_logo.svg" alt="Prometheus" class="skill-icon">
                             <span class="skill-name">Prometheus</span>
-                        </div>
+                        </a>
+                        <a href="https://docs.oracle.com/en-us/iaas/" target="_blank" class="skill-card">
+                            <img src="https://www.oracle.com/a/ocom/img/rh-oracle-cloud.svg" alt="OCI" class="skill-icon">
+                            <span class="skill-name">OCI</span>
+                        </a>
+                        <a href="https://docs.ansible.com/" target="_blank" class="skill-card">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Ansible_logo.svg" alt="Ansible" class="skill-icon">
+                            <span class="skill-name">Ansible</span>
+                        </a>
+                        <a href="https://www.elastic.co/guide/" target="_blank" class="skill-card">
+                            <img src="https://www.elastic.co/static-res/images/elastic-logo-200.png" alt="Elasticsearch" class="skill-icon">
+                            <span class="skill-name">Elasticsearch</span>
+                        </a>
+                        <a href="https://github.com/features/actions" target="_blank" class="skill-card">
+                            <img src="https://avatars.githubusercontent.com/u/44036562?s=48&v=4" alt="GitHub Actions" class="skill-icon">
+                            <span class="skill-name">GitHub Actions</span>
+                        </a>
+                        <a href="https://docs.gitlab.com/ee/ci/" target="_blank" class="skill-card">
+                            <img src="https://about.gitlab.com/images/press/logo/svg/gitlab-logo-100.svg" alt="GitLab CI/CD" class="skill-icon">
+                            <span class="skill-name">GitLab CI/CD</span>
+                        </a>
                     </div>
                 </div>
 
@@ -1173,31 +1226,6 @@
                     </div>
                 </div>
 
-                <!-- Contact Information -->
-                <div class="sidebar-section">
-                    <h2 class="section-title">Connect</h2>
-                    <div class="contact-grid">
-                        <a href="mailto:amaharjan08@gmail.com" class="contact-item">
-                            <i class="fas fa-envelope contact-icon"></i>
-                            <span>amaharjan08@gmail.com</span>
-                        </a>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt contact-icon"></i>
-                            <span>Berkeley, California</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Languages -->
-                <div class="sidebar-section">
-                    <h2 class="section-title">Languages</h2>
-                    <div class="languages-grid">
-                        <div class="language-item">🇺🇸 English</div>
-                        <div class="language-item">🇮🇳 Hindi</div>
-                        <div class="language-item">🇳🇵 Nepali</div>
-                        <div class="language-item">🏛️ Nepal Bhasa</div>
-                    </div>
-                </div>
 
                 <!-- Social & Download -->
                 <div class="social-container">
